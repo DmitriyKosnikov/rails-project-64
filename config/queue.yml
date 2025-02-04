@@ -9,10 +9,10 @@ default: &default
       polling_interval: 0.1
 
 development:
-  <<: *default
+  adapter: async
 
 test:
-  <<: *default
+  adapter: test
 
 production:
-  <<: *default
+  adapter: async
