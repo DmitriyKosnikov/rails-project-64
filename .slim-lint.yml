@@ -1,0 +1,10 @@
+exclude:
+  - 'app/views/layouts/**/*.slim'
+
+linters:
+  LineLength:
+    include: 'specific/directory/to/include/**/*.slim'
+    max: 100
+
+  RedundantDiv:
+    enabled: false
