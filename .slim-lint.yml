@@ -1,0 +1,34 @@
+exclude:
+  - 'node_modules/**/*'
+  - 'vendor/**/*'
+  - 'tmp/**/*'
+  - 'log/**/*'
+
+linters:
+  LineLength:
+    max: 120  # Максимальная длина строки
+
+  Indentation:
+    character: 'tab'  # Использовать табы вместо пробелов
+
+  TrailingWhitespace:
+    enabled: true  # Запрет на пробелы в конце строк
+
+  EmptyLineBetweenBlocks:
+    enabled: true  # Требование пустой строки между блоками кода
+
+  RedundantWhitespace:
+    enabled: true  # Удаление лишних пробелов
+
+  RuboCop:
+    enabled: true  # Использовать RuboCop для проверки встроенного Ruby-кода
+    config: '.rubocop.yml'  # Путь к конфигу RuboCop
+
+  NestedControlStatement:
+    enabled: true  # Запрещает вложенные управляющие конструкции (if внутри if и т. д.)
+
+  ClassAttributeWithStaticValue:
+    enabled: false  # Отключает предупреждения о статичных значениях атрибута `class`
+
+  RedundantDiv:
+    enabled: false
