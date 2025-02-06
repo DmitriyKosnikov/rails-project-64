@@ -3,3 +3,116 @@ Initializing the Sentry background worker with 4 threads
   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='RailsProject64'*/[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='RailsProject64'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/" for ::1 at 2025-02-06 11:57:04 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [event] 36125387e39c47a3be85d646559c9441 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 63d552c6396d4021aa0b6ce8d1a452d1 to Sentry
+Started GET "/" for ::1 at 2025-02-06 11:57:05 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 2b81524e108e41e5ac18e6f9edc4fff2 to Sentry
+Started GET "/favicon.ico" for ::1 at 2025-02-06 11:57:05 +0300
+[Tracing] Starting <http.server> transaction </favicon.ico>
+[Profiler] Started
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1e0e296d42964d169856a41eebe72f2b to Sentry
+Started GET "/" for ::1 at 2025-02-06 11:57:09 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d816ad66536b4f9b82bf5829e6b1e176 to Sentry
+Started GET "/" for ::1 at 2025-02-06 11:57:23 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 8.8ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.slim (Duration: 24.6ms | GC: 4.1ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.7ms)
+
+
+  
+ActionView::Template::Error (The asset 'application.js' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'application.js' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'application.js' was not found in the load path.):
+    19: 
+    20:     / Includes all stylesheet files in app/assets/stylesheets
+    21:     = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    22:     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    23:     = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    24:     = Sentry.get_trace_propagation_meta.html_safe
+    25: 
+  
+app/views/layouts/application.html.slim:22
+
+Information for cause: Propshaft::MissingAssetError (The asset 'application.js' was not found in the load path.):
+  
+app/views/layouts/application.html.slim:22
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [event] 925267def8274567a1776de867c9ff2f to Sentry
+[Transport] Sending envelope with items [transaction, profile] 274f1fc597f4446281377a4db65dde66 to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/" for ::1 at 2025-02-06 11:58:21 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 26.7ms | GC: 10.2ms)
+Completed 200 OK in 201ms (Views: 28.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 19.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 7551e801ec894268877d83cb1e2b002f to Sentry
+Started GET "/assets/application-a287cdb7.css" for ::1 at 2025-02-06 11:58:21 +0300
+[Tracing] Starting <http.server> transaction </assets/application-a287cdb7.css>
+[Profiler] Started
+Started GET "/assets/application-bb3a7f6f.js" for ::1 at 2025-02-06 11:58:21 +0300
+[Tracing] Starting <http.server> transaction </assets/application-bb3a7f6f.js>
+[Profiler] Not started since running elsewhere
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction] 448c104b5ebf47db9f314a0b4650dfa5 to Sentry
+[Transport] Sending envelope with items [transaction] 936dd5adface494989ee9eed022c8dcb to Sentry
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Shutting down background worker
