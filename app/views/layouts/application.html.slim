@@ -24,4 +24,6 @@ html
     = Sentry.get_trace_propagation_meta.html_safe
 
   body
+    p.notice= notice
+    p.alert= alert
     = yield
