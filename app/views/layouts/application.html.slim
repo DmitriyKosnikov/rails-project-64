@@ -23,7 +23,12 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = Sentry.get_trace_propagation_meta.html_safe
 
-  body
-    p.notice= notice
-    p.alert= alert
-    = yield
+  body.d-flex.flex-column
+    = render 'layouts/shared/navbar'
+    main.flex-shrink-0 style='padding-top: 56px;'
+      = render 'layouts/shared/alert'
+      .container
+        = yield
+    footer.footer.mt-auto.py-3.bg-light
+      .container
+      span.text-muted Place sticky footer content here.

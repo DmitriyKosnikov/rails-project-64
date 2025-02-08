@@ -1127,3 +1127,2431 @@ Completed 200 OK in 41ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 [Transport] Sending envelope with items [sessions]  to Sentry
 [Sentry::SessionFlusher] thread killed
 Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/rails/info/routes" for ::1 at 2025-02-07 01:33:12 +0300
+[Tracing] Starting <http.server> transaction </rails/info/routes>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionpack-8.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (Duration: 4.7ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionpack-8.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/railties-8.0.1/lib/rails/templates/layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 184ms (Views: 9.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 16.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 0730bbb53dee4ee4802b3b54572a8bdb to Sentry
+Started GET "/r" for ::1 at 2025-02-07 01:33:16 +0300
+[Tracing] Starting <http.server> transaction </r>
+[Profiler] Started
+  
+ActionController::RoutingError (No route matches [GET] "/r"):
+  
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile] 197ce75c77b24df2bfb9ad59964dcda1 to Sentry
+Started GET "/" for ::1 at 2025-02-07 01:33:20 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 9.0ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.slim (Duration: 20.9ms | GC: 0.5ms)
+Completed 200 OK in 66ms (Views: 22.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 2f01b0618ab041ca837faf99d45ca037 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 01:33:22 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 5.6ms | ActiveRecord: 1.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 99d438a755a24caa9d7f43ef7a0379d1 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-07 01:33:29 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 257ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 0fceb82032c74466a67376682341e4d0 to Sentry
+Started GET "/" for ::1 at 2025-02-07 01:33:30 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.3ms | GC: 0.1ms)
+Completed 200 OK in 17ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] dd2bdf9f7bde4efe9c6d1c25b66a2075 to Sentry
+Started GET "/" for ::1 at 2025-02-07 01:33:33 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.7ms | GC: 0.1ms)
+Completed 200 OK in 42ms (Views: 2.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] fac02e659cfa4fafb03cd7b8709b8056 to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-07 01:33:38 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 50ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 2b3a61cbe7fe4cb7975ae1b8defb9f5b to Sentry
+Started GET "/" for ::1 at 2025-02-07 01:33:38 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] b967c835234b4924ae91671a4262ee99 to Sentry
+Started GET "/" for ::1 at 2025-02-07 01:33:39 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile, client_report] 2510f0520ed940c3a1d52e51c58f36c4 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 17:09:04 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 17.8ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 18.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e4fe9481f45341ef9620e5a9e630694f to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 17:09:05 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 20d130fc22ef4ee2b5d163deb61e9411 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-07 17:09:13 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 275ms (ActiveRecord: 6.3ms (1 query, 0 cached) | GC: 13.6ms)
+
+
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile] 47fa269c793446eea5db00a42c3ac678 to Sentry
+Started GET "/" for ::1 at 2025-02-07 17:09:13 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] f110df78e2654b0c9485caf0238c29d7 to Sentry
+Started GET "/" for ::1 at 2025-02-07 17:09:15 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 3.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 7ffe11ac7e06400b9ced3f7eb4fcf7fe to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-07 17:09:21 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 39ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] f66262a8a03444b0b7d0c94a53626b36 to Sentry
+Started GET "/" for ::1 at 2025-02-07 17:09:21 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] 6832fef59e444f058e6b6751b41ac543 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:23:23 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile, client_report] 4275bb1f386e499583aa789abdb361d6 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:25:39 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e070a56ce4dc4f09969cb511c3c31f63 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:07 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 3.8ms | GC: 0.1ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.5ms | GC: 0.8ms)
+Completed 200 OK in 29ms (Views: 10.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 92b452e8d6e14c1088d6dfd15918a2d0 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 19:33:09 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4784222327a14e6ba5df6af4283ba4d5 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-07 19:33:14 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 271ms (ActiveRecord: 6.9ms (1 query, 0 cached) | GC: 3.5ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 03b5c58ded904d9e8935df75be3db711 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:15 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.2ms | GC: 0.1ms)
+Completed 200 OK in 17ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] 1b64eea06fb34ea0adaddcd74d1b0939 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 19:33:15 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] 5ff9bdef20bb420c843aa448158b1a79 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:15 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 79a48606538e457f92fe8c140e9a6dc4 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:33 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 4.9ms | GC: 1.1ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 6.3ms | GC: 1.5ms)
+Completed 200 OK in 38ms (Views: 7.6ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] ef6784037a7849adbcdde340edb580e3 to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-07 19:33:35 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 32ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 8.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] f7d800f6bf2f41368bfabaa79c851bee to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:36 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] 7a6b2f2618eb40e38212e0d63bdd6002 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:33:38 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] c2677dcafd434b3abfe8a054ce5d94aa to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 19:33:40 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.9ms | GC: 0.1ms)
+Completed 200 OK in 39ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 7ad4c9a19827458383ce0155f57edcd7 to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-07 19:33:41 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d1d5897dc9484b25be649022cb602631 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started POST "/users" for ::1 at 2025-02-07 19:34:00 +0300
+[Tracing] Starting <http.server> transaction </users>
+[Profiler] Started
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='RailsProject64',controller='registrations'*/[0m
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'bebra@mail.ru' LIMIT 1 /*action='create',application='RailsProject64',controller='registrations'*/[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ('bebra@mail.ru', '$2a$12$PFBiVmwHnjmZ581MGOcvtOgv2fTHaIoMBvKWulnwEY9A167VWpXoK', NULL, NULL, NULL, '2025-02-07 16:34:01.032050', '2025-02-07 16:34:01.032050') RETURNING "id" /*action='create',application='RailsProject64',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='RailsProject64',controller='registrations'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 271ms (ActiveRecord: 5.5ms (2 queries, 0 cached) | GC: 2.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile, client_report] 9870bb6e6ba2451288dabcb5711d57d1 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:34:01 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] 4648a3f9b14f490884bda9ec6f74f781 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:34:03 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] f33f9ce0e69d4978b5b2058c82b11772 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 19:34:04 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] 3f5187a2cd954b23aa798fb22ebf42f2 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:34:04 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e7e46a2bba9843a597b8a9fda76eb9d2 to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-07 19:34:04 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RailsProject64',controller='registrations'*/[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] e331d53957034b2ab5b37211d698cfdf to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:34:04 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 5b3eeef42c2f4bcb9532a67c79963290 to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-07 19:34:09 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 45ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] b0764a8fcda842d78339fd8b4698b4a4 to Sentry
+Started GET "/" for ::1 at 2025-02-07 19:34:09 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] fa502f76a040490fbef2897f82a9b1f7 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:06:31 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 5.6ms | GC: 0.7ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 13.0ms | GC: 1.3ms)
+Completed 200 OK in 33ms (Views: 14.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile, client_report] 03aaa87adb1a4a7ca1e982194a4b6232 to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:07:14 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 16.5ms | GC: 7.9ms)
+Completed 200 OK in 35ms (Views: 17.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 475c06f3d6204748af2c7ccf682b3752 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:07:35 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 9.9ms | GC: 7.9ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.3ms | GC: 0.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 30.9ms | GC: 22.7ms)
+Completed 200 OK in 49ms (Views: 31.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 23.3ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] b123adbc4b3f4f55b613db84b13fd903 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:57:02 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 19.4ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 20.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile] 5f96c0bc4d0044028499e927a83b77ad to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:57:25 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.0ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.6ms | GC: 0.8ms)
+Completed 200 OK in 31ms (Views: 11.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 8ee0a3b4bb60431aaa78c8e0903a31da to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:57:32 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.4ms | GC: 0.3ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.2ms | GC: 0.7ms)
+Completed 200 OK in 31ms (Views: 11.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] ee08fce39916471aabe4d10b53a5ae16 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:58:51 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 6.2ms | GC: 3.8ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 4.3ms | GC: 0.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 16.4ms | GC: 5.0ms)
+Completed 200 OK in 37ms (Views: 17.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 85473a05718d4b0b9ed9fb9a964bd09c to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:58:52 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 5bac2b01365f4deea63892dabfebead9 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-07 22:58:54 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.9ms | GC: 0.5ms)
+Completed 200 OK in 49ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 039a8753a48b434d81df43221601a9e3 to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:58:55 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d3a789265a4348c483e0815651e4aab5 to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:59:15 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.9ms | GC: 0.5ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.6ms | GC: 0.9ms)
+Completed 200 OK in 31ms (Views: 11.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1aa68e20cfac48efa3977883c8a783c7 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:59:27 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.1ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.5ms | GC: 0.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.2ms | GC: 0.7ms)
+Completed 200 OK in 30ms (Views: 10.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] c8cba6eeca4f4f1d804205ca6e1c7046 to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:59:35 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.9ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.4ms | GC: 0.3ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.1ms | GC: 0.7ms)
+Completed 200 OK in 32ms (Views: 10.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] a7cc7cb530c44be89979a649ce9a672e to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:59:47 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 5.5ms | GC: 2.3ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 11.8ms | GC: 2.4ms)
+Completed 200 OK in 32ms (Views: 12.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 2305a06735044ab088826afa88195ea0 to Sentry
+Started GET "/" for ::1 at 2025-02-07 22:59:56 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 0d2b2519a572482099d637fe938034e4 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:00:50 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.8ms | GC: 1.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.4ms | GC: 0.5ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 11.9ms | GC: 1.8ms)
+Completed 200 OK in 37ms (Views: 14.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4d5cde1818a74ec38220ec87ca8ad454 to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:01:16 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 11.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 80d106a07e1345bc8ca234d919726885 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:01:55 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/shared/_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial layouts/shared/_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial layouts/shared/_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+    25: 
+    26:   body.d-flex.flex-column.h-100
+    27: 
+    28:     = render 'layouts/shared/nav'
+    29: 
+    30:     = render 'layouts/shared/flash'
+    31: 
+  
+app/views/layouts/application.html.slim:28
+
+Information for cause: ActionView::MissingTemplate (Missing partial layouts/shared/_nav with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] cd3ef79eac8645e8aa6a106cc33d998a to Sentry
+[Transport] Sending envelope with items [transaction, profile] 038a809eade945418cf53b85116571ca to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:02:35 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.6ms | GC: 0.7ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.6ms | GC: 1.1ms)
+Completed 200 OK in 30ms (Views: 11.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 5dc09760e7bc46e29c04c05dbacdafa3 to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:03:01 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 11.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] ae39fd1b90b5414490291b9f83aad404 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:03:48 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.8ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 10.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] f4d2374e035849459b3f3b82a95038a2 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:04:19 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.0ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.4ms | GC: 1.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionView::Template::Error (The asset 'logo.png' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'logo.png' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'logo.png' was not found in the load path.):
+    2:   .py-2.border-bottom
+    3:     .navbar.navbar-expand-md.navbar-light
+    4:       = link_to root_path, class: 'navbar-brand me-md-4' do
+    5:         = image_tag asset_path('logo.png'), width: 30, alt: t('.hexlet_logo')
+    6: 
+    7:       #navbarToggler.collapse.navbar-collapse
+    8:         ul.nav.nav-pills.flex-grow-1.navbar-nav
+  
+app/views/layouts/shared/_navbar.html.slim:5
+app/views/layouts/shared/_navbar.html.slim:4
+app/views/layouts/application.html.slim:28
+
+Information for cause: Propshaft::MissingAssetError (The asset 'logo.png' was not found in the load path.):
+  
+app/views/layouts/shared/_navbar.html.slim:5
+app/views/layouts/shared/_navbar.html.slim:4
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] 2cb9e429c6d34bf680683c868d6e06d0 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 35c4261aeb68473bad483c364b2734c2 to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:05:14 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.0ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_path' for an instance of #<Class:0x0000000141258a40>)
+Caused by: NameError (undefined local variable or method `posts_path' for an instance of #<Class:0x0000000141258a40>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `posts_path' for an instance of #<Class:0x0000000141258a40>):
+    11:               = 'main'
+    12:               / END
+    13:           li.nav-item.me-2
+    14:             = link_to posts_path, class: 'nav-link link-dark' do
+    15:               / BEGIN
+    16:               = 'posts_page'
+    17:               / END
+  
+app/views/layouts/shared/_navbar.html.slim:14
+app/views/layouts/application.html.slim:28
+
+Information for cause: NameError (undefined local variable or method `posts_path' for an instance of #<Class:0x0000000141258a40>):
+  
+app/views/layouts/shared/_navbar.html.slim:14
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] a5c53ffed2be48fd969a0d41f9c84382 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 248df791da6d4fefbb342b1759ba0ddd to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:05:28 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 3.0ms | GC: 0.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.8ms | GC: 0.8ms)
+Completed 200 OK in 28ms (Views: 10.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] f7ae3c3a833a45c195c3f82ae52f4c1c to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:07:37 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 3.2ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.5ms | GC: 1.3ms)
+Completed 200 OK in 32ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e350cddb198e4d75aa002c2a57b87642 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:08:48 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.6ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.6ms | GC: 0.2ms)
+Completed 200 OK in 41ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 30b8591035a84800b29949d2a815beda to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:15:53 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.1ms | GC: 0.3ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.3ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.6ms | GC: 1.3ms)
+Completed 200 OK in 28ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 026b95506d964b54ae6cd6c8d2331343 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:16:42 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.2ms | GC: 0.6ms)
+Completed 200 OK in 28ms (Views: 8.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 397541da0d424f33ad24f8f9fdd7b014 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:54:30 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    .container-fluid
+        a.navbar-brand href = root_path Collective blog
+        button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+        aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+...ml_safe(('navbar-collapse' aria-expanded = 'false' aria-labe...
+...                           ^~~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    .container-fluid
+        a.navbar-brand href = root_path Collective blog
+        button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+        aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+):
+1:    nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+2:        .container-fluid
+3:            a.navbar-brand href = root_path Collective blog
+4:            button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+5:            aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/application.html.slim:28
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+...ml_safe(('navbar-collapse' aria-expanded = 'false' aria-labe...
+...                           ^~~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [event] 86a27cf38c584bfcb1258b1a6355e7c5 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 2b35d403f3aa4696b75e51ec1ba3947c to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:54:40 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 7.1ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    .container-fluid
+        a.navbar-brand href = root_path Collective blog
+        button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+            aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+...ml_safe(('navbar-collapse' aria-expanded = 'false' aria-labe...
+...                           ^~~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    .container-fluid
+        a.navbar-brand href = root_path Collective blog
+        button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+            aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+):
+1:    nav.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+2:        .container-fluid
+3:            a.navbar-brand href = root_path Collective blog
+4:            button.navbar-toggler type = 'button' data-bs-toggle = 'collapse' data-bs-target = '#navbar-collapse'
+5:                aria-controls = 'navbar-collapse' aria-expanded = 'false' aria-label = 'Toggle navigation'
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/application.html.slim:28
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+...ml_safe(('navbar-collapse' aria-expanded = 'false' aria-labe...
+...                           ^~~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] 20f627b3953143efbd34a1a743d1804b to Sentry
+[Transport] Sending envelope with items [transaction, profile] f02e7ca931bc43fa832e272027377084 to Sentry
+Started GET "/" for ::1 at 2025-02-07 23:54:51 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 5.6ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 2.2ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 14.1ms | GC: 1.3ms)
+Completed 200 OK in 33ms (Views: 15.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] c664df7f2db147e8b119e9d068c96996 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:02:18 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.9ms | GC: 0.9ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.5ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 2.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.slim (Duration: 14.7ms | GC: 4.3ms)
+Completed 200 OK in 34ms (Views: 15.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.3ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 3629c0be33bc46eba2c035bd98d0a369 to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:02:19 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] de7e4998800941f6a5180b399b9b01bc to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:02:26 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] b713413b48424b80bcb041ebd36ba206 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:24:18 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.8ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 10.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 51ab99d3c09041adb079a800d012efeb to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:24:19 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] aeb5fc4f76134630bc6a9a7bbc40a81d to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:24:20 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 830158f289ef4c3a9589078d38c3b3f6 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:25:19 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.9ms | GC: 0.4ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.0ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.slim (Duration: 12.5ms | GC: 1.5ms)
+Completed 200 OK in 37ms (Views: 15.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] b30b69118d6d4535a8ecd65fe2a38547 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:34:41 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.4ms | GC: 0.8ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 9.9ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.slim (Duration: 23.9ms | GC: 6.8ms)
+Completed 200 OK in 43ms (Views: 24.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1ea31e846b1c4067a66e1881a275e30f to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:35:10 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 4.8ms | GC: 0.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.9ms | GC: 0.5ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 16.9ms | GC: 3.1ms)
+Completed 200 OK in 39ms (Views: 18.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 78099c9ed5d24e44ba463e1ecd0eef51 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:36:03 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 9169ffa0ce7340c48be0b6204922702e to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:48:23 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 11.3ms | GC: 1.4ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.4ms | GC: 0.1ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 20.5ms | GC: 2.4ms)
+Completed 200 OK in 41ms (Views: 21.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 7057a292de664451ae04792801759688 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 00:48:52 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.4ms | GC: 0.1ms)
+Completed 200 OK in 45ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4d86e5d84c1e446ab74ea516a58d9e82 to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-08 00:48:53 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.0ms | GC: 0.1ms)
+Completed 200 OK in 28ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 763688df63f74124853ffcc65a9d34c0 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 00:48:55 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.0ms | GC: 0.2ms)
+Completed 200 OK in 40ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] b41c3345a66440e89506c3cbe37ca0ac to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-08 00:48:57 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 8302c0994fc54fc5a53be8689d1bcb14 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 00:48:57 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 768f16dd6c6040a59cde3e24a1b4aac0 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-08 00:49:04 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 268ms (ActiveRecord: 5.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 025eb216eb984ed888c80c846482d86d to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:49:04 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 4.6ms | GC: 3.8ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.1ms | GC: 3.8ms)
+Completed 200 OK in 21ms (Views: 5.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.8ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] 10e475d8a6d343a1b06ed7b8efe3f83f to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:49:37 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 6.9ms | GC: 0.3ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.8ms | GC: 1.6ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 17.9ms | GC: 2.7ms)
+Completed 200 OK in 38ms (Views: 17.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 2.8ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4cb8b754f2c548dabc0139186699c913 to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-08 00:49:40 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 38ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e6e5dbd7dda342abad1fedcc2e19a2e1 to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:49:40 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] 7bf3b2e0e9544d4690c78eccc911a6d9 to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:50:16 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.2ms | GC: 0.1ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.0ms | GC: 0.5ms)
+Completed 200 OK in 28ms (Views: 9.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 39fa0b6e86224ce6947869b066f08f87 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:50:28 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 7.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check header
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+        = link_to 'Collective Blog', root_path, class: 'navbar-brand'
+        button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+        #navbarCollapse.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-md-0
+            li.nav-item
+            = link_to 'Posts', '#', class: 'nav-link'
+        ul.navbar-nav.ms-auto.mb-2.mb-md-0
+            - if user_signed_in?
+            li.nav-item
+                = link_to 'Sign out', destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+            - else
+            li.nav-item
+                = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
+            li.nav-item
+                = link_to 'Log in', new_user_session_path, class: 'nav-link'
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:15: else without rescue is useless
+..._concat(("</li>".freeze)); else; 
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check header
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    .container-fluid
+        = link_to 'Collective Blog', root_path, class: 'navbar-brand'
+        button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+        #navbarCollapse.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-md-0
+            li.nav-item
+            = link_to 'Posts', '#', class: 'nav-link'
+        ul.navbar-nav.ms-auto.mb-2.mb-md-0
+            - if user_signed_in?
+            li.nav-item
+                = link_to 'Sign out', destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+            - else
+            li.nav-item
+                = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
+            li.nav-item
+                = link_to 'Log in', new_user_session_path, class: 'nav-link'
+):
+1:    header
+2:        nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+3:        .container-fluid
+4:            = link_to 'Collective Blog', root_path, class: 'navbar-brand'
+5:            button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+6:            span.navbar-toggler-icon
+7:            #navbarCollapse.collapse.navbar-collapse
+8:            ul.navbar-nav.me-auto.mb-2.mb-md-0
+9:                li.nav-item
+10:                = link_to 'Posts', '#', class: 'nav-link'
+11:            ul.navbar-nav.ms-auto.mb-2.mb-md-0
+12:                - if user_signed_in?
+13:                li.nav-item
+14:                    = link_to 'Sign out', destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+15:                - else
+16:                li.nav-item
+17:                    = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
+18:                li.nav-item
+19:                    = link_to 'Log in', new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/shared/_navbar.html.slim:15: else without rescue is useless
+app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:28
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:15: else without rescue is useless
+..._concat(("</li>".freeze)); else; 
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:15: else without rescue is useless
+app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:28
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] 82710bbe52654101b2f65fce30c7fe08 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 6a942a1e02044af581d4210214a28cd8 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:51:20 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 13.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] cb75ed2620cc415d8e10b6d599774bb3 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 00:51:24 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | GC: 3.7ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.6ms | GC: 0.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 6.8ms | GC: 4.1ms)
+Completed 200 OK in 49ms (Views: 8.4ms | ActiveRecord: 1.1ms (0 queries, 0 cached) | GC: 4.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4cfb3aabd56f47769144da6fa7c9abb9 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-08 00:51:31 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 264ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e4a2777fc1c1438abda35a841826aabb to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:51:31 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] dbe05ffa39564f91a956c487fb5504ad to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:52:06 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.7ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 9.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] bb2d6583adef4af48b41263d535d2ff0 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:52:17 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 14.4ms | GC: 0.4ms)
+Completed 200 OK in 35ms (Views: 14.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 5aec19d663144aeea99daac740fdf3bb to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:52:23 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 5.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.8ms | GC: 0.7ms)
+Completed 200 OK in 28ms (Views: 8.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d43ae7059031421ba89992d789f44dd1 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:56:15 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 15.4ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 14.8ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 739a5a5178cb421f8d37885840d60de5 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:56:46 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 11.5ms | GC: 4.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 6.8ms | GC: 4.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 4.0ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.slim (Duration: 40.5ms | GC: 21.5ms)
+Completed 200 OK in 60ms (Views: 40.7ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 21.5ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 9df9defb6c044d42846ccafac9e1e1da to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:56:47 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 6.9ms | GC: 5.3ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.4ms | GC: 0.4ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 14.5ms | GC: 12.1ms)
+Completed 200 OK in 51ms (Views: 15.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 13.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] e270ee46824d4f019a0055665bcb12fa to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:56:47 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.6ms | GC: 0.5ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 2.3ms | GC: 0.5ms)
+Completed 200 OK in 29ms (Views: 2.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1526f4413d694dfb9ba5ff35ddb93c6b to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-08 00:57:03 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 34ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] c45d1b2a7a1a48c28867758ebd7a511f to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:57:03 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] 9cea13cac0a241b79a3cf4c3de9da2ef to Sentry
+Started GET "/" for ::1 at 2025-02-08 00:57:07 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 885a895e57654dcb8876f5efde7266f5 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:00:06 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 6.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check doctype html
+html
+  head
+    title = content_for(:title) || "Rails Project 64"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    meta name="apple-mobile-web-app-capable" content="yes"
+    meta name="mobile-web-app-capable" content="yes"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = yield :head
+
+    / Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
+    / = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
+
+    link rel="icon" href="/icon.png" type="image/png"
+    link rel="icon" href="/icon.svg" type="image/svg+xml"
+    link rel="apple-touch-icon" href="/icon.png"
+
+    / Includes all stylesheet files in app/assets/stylesheets
+    = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = Sentry.get_trace_propagation_meta.html_safe
+
+  body.d-flex.flex-column.h-100
+    = render 'shared/header'  # Подключаем partial с навбаром
+    main.flex-shrink-0
+      .container
+        = yield  # Основной контент страницы
+    = render 'shared/footer'  # Подключаем partial с футером
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/application.html.slim:33: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check doctype html
+html
+  head
+    title = content_for(:title) || "Rails Project 64"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    meta name="apple-mobile-web-app-capable" content="yes"
+    meta name="mobile-web-app-capable" content="yes"
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = yield :head
+
+    / Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
+    / = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
+
+    link rel="icon" href="/icon.png" type="image/png"
+    link rel="icon" href="/icon.svg" type="image/svg+xml"
+    link rel="apple-touch-icon" href="/icon.png"
+
+    / Includes all stylesheet files in app/assets/stylesheets
+    = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = Sentry.get_trace_propagation_meta.html_safe
+
+  body.d-flex.flex-column.h-100
+    = render 'shared/header'  # Подключаем partial с навбаром
+    main.flex-shrink-0
+      .container
+        = yield  # Основной контент страницы
+    = render 'shared/footer'  # Подключаем partial с футером
+
+):
+1:    doctype html
+2:    html
+3:      head
+4:        title = content_for(:title) || "Rails Project 64"
+5:        meta name="viewport" content="width=device-width,initial-scale=1"
+6:        meta name="apple-mobile-web-app-capable" content="yes"
+7:        meta name="mobile-web-app-capable" content="yes"
+8:        = csrf_meta_tags
+9:        = csp_meta_tag
+10:    
+11:        = yield :head
+12:    
+13:        / Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
+14:        / = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
+15:    
+16:        link rel="icon" href="/icon.png" type="image/png"
+17:        link rel="icon" href="/icon.svg" type="image/svg+xml"
+18:        link rel="apple-touch-icon" href="/icon.png"
+19:    
+20:        / Includes all stylesheet files in app/assets/stylesheets
+21:        = stylesheet_link_tag :app, "data-turbo-track": "reload"
+22:        = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+23:        = stylesheet_link_tag "application", "data-turbo-track": "reload"
+24:        = Sentry.get_trace_propagation_meta.html_safe
+25:    
+26:      body.d-flex.flex-column.h-100
+27:        = render 'shared/header'  # Подключаем partial с навбаром
+28:        main.flex-shrink-0
+29:          .container
+30:            = yield  # Основной контент страницы
+31:        = render 'shared/footer'  # Подключаем partial с футером
+  
+app/views/layouts/application.html.slim:33: syntax error, unexpected `end', expecting ')'
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/application.html.slim:33: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/layouts/application.html.slim:33: syntax error, unexpected `end', expecting ')'
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] 610c107f71a047919c5c900f00513a56 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 6167cbedb69c4403b97daa5b9a6fc8a2 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:00:52 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.6ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 6.2ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial shared/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial shared/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+    24:     = Sentry.get_trace_propagation_meta.html_safe
+    25: 
+    26:   body.d-flex.flex-column.h-100
+    27:     = render 'shared/header'
+    28:     main.flex-shrink-0
+    29:       .container
+    30:         = yield
+  
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActionView::MissingTemplate (Missing partial shared/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.slim:27
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] e39e452587834f2bbb78607564586587 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 8e3c850f1d034aaca96b85ef07994e12 to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:01:11 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.6ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+    24:     = Sentry.get_trace_propagation_meta.html_safe
+    25: 
+    26:   body.d-flex.flex-column.h-100
+    27:     = render 'shared/navbar'
+    28:     main.flex-shrink-0
+    29:       .container
+    30:         = yield
+  
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActionView::MissingTemplate (Missing partial shared/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder, :slim]}.
+
+Searched in:
+  * "/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.11/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actiontext-8.0.1/app/views"
+  * "/Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.slim:27
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] b001f49e9d5e43b68546ae22af8d8220 to Sentry
+[Transport] Sending envelope with items [transaction, profile] e60775ddf2744cb6ae24a57d481131e5 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:01:20 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 10.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1d91da4e86d6461784b4b7574cf7b588 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:03:42 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 262d134eea804467b6a21cf7407dabae to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:04:20 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.6ms | GC: 0.6ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.slim (Duration: 12.4ms | GC: 2.2ms)
+Completed 200 OK in 30ms (Views: 13.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.4ms)
+
+
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile] c9a0c262510748a889215d2bf91cde80 to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-08 01:04:21 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.2ms | GC: 0.3ms)
+Completed 200 OK in 40ms (Views: 4.6ms | ActiveRecord: 1.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 86e50daf7b194347afec4b5f2b67f566 to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 01:04:22 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.9ms | GC: 0.1ms)
+Completed 200 OK in 35ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d982a810473b41a0b426eae6865009f0 to Sentry
+Started POST "/users/sign_in" for ::1 at 2025-02-08 01:04:29 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'myemail@mail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 264ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 1439bbe0c43e4d5a86c8626db2172a91 to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:04:29 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RailsProject64',controller='home'*/[0m
+  ↳ app/views/home/index.html.slim:5
+  Rendered home/index.html.slim within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.6ms | GC: 0.1ms)
+Completed 200 OK in 20ms (Views: 1.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction, client_report] 1d8c45e98cc3409eaba1cb1592642f53 to Sentry
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-02-08 01:04:50 +0300
+[Tracing] Starting <http.server> transaction </users/sign_out>
+[Profiler] Started
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RailsProject64',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 41ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 4b951763119b4f01aaaba81a9ef67240 to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:04:50 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.0ms | GC: 0.2ms)
+Completed 200 OK in 21ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+[Transport] Sending envelope with items [transaction] b5ec369ab7bc485ebbf2b28ff972349c to Sentry
+Started GET "/" for ::1 at 2025-02-08 01:04:53 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 5d9387af3ffb46c68a23e5e31e0f6026 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 15:39:01 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 10.2ms | GC: 7.6ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.slim (Duration: 29.4ms | GC: 8.2ms)
+Completed 200 OK in 52ms (Views: 30.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 8.2ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile, client_report] 2a28bbc70b114caabfac1efc56d1aa1b to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 16:01:06 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 53ceeaa0f0864369866e242929c0d543 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/" for ::1 at 2025-02-08 16:01:19 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 11.1ms | GC: 0.9ms)
+Completed 200 OK in 51ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] d941e40f05d044628055397ca19147e6 to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/" for ::1 at 2025-02-08 16:01:45 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 9.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 10.5ms | GC: 9.4ms)
+  Rendered layout layouts/application.html.slim (Duration: 34.7ms | GC: 9.4ms)
+Completed 200 OK in 203ms (Views: 36.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 19.1ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 3e4e6c305de3407b9d01d7426265f438 to Sentry
+Started GET "/assets/application-41edd4a8.css" for ::1 at 2025-02-08 16:01:46 +0300
+[Tracing] Starting <http.server> transaction </assets/application-41edd4a8.css>
+[Profiler] Started
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction] 1d4c36004f434e68835a8cbe7acd2a20 to Sentry
+Started GET "/" for ::1 at 2025-02-08 16:02:14 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.0ms | GC: 0.2ms)
+Completed 200 OK in 27ms (Views: 9.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] c53387caea354633ac58d917a85077f7 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/users/sign_in" for ::1 at 2025-02-08 16:02:51 +0300
+[Tracing] Starting <http.server> transaction </users/sign_in>
+[Profiler] Started
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 7.2ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile, client_report] 543d0fb25bbf44408144fec5ab28fac3 to Sentry
+Started GET "/users/sign_up" for ::1 at 2025-02-08 16:02:54 +0300
+[Tracing] Starting <http.server> transaction </users/sign_up>
+[Profiler] Started
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /Users/dmitriy/.asdf/installs/ruby/3.3.5/lib/ruby/gems/3.3.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 258b791667a34e3882d0cb00040ddbf0 to Sentry
+Started GET "/" for ::1 at 2025-02-08 16:02:56 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering home/index.html.slim within layouts/application
+  Rendered home/index.html.slim within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 53a01b7320fd458788d5eec9708286f2 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker

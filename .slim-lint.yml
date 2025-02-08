@@ -3,7 +3,6 @@ exclude:
 
 linters:
   LineLength:
-    include: 'specific/directory/to/include/**/*.slim'
     max: 100
 
   RedundantDiv:
