@@ -3,4 +3,5 @@ p Find me in app/views/home/index.html.slim
 p = link_to 'Log in', new_user_session_path
 p = link_to 'Sign up', new_user_registration_path
 - if user_signed_in?
-    = link_to 'sign out', destroy_user_session_path, data: { 'turbo-method': :delete, 'turbo-confirm': 'are you sure?' }
+    = link_to 'sign out', destroy_user_session_path,
+    data: { 'turbo-method': :delete, 'turbo-confirm': 'are you sure?' }
