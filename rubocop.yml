@@ -2,8 +2,10 @@ require:
   - rubocop-rails
 
 AllCops:
+  Exclude:
+    - 'db/**/*'
   NewCops: enable
-  TargetRubyVersion: 3.3.5
+  TargetRubyVersion: 3.3.5 
 
 Rails:
   Enabled: true

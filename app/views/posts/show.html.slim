@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+== render @post
+
+div
+  = link_to 'Back to posts', root_path, class: 'btn btn-outline-primary me-2'
+  - if @post.creator == current_user
+    = link_to 'Edit this post', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
+    = link_to 'Delete this post', post_path(@post),
+     data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+     class: 'btn btn-outline-danger'
