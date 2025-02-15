@@ -1,0 +1,29 @@
+.card
+  .card-body
+    .media
+      .media-body
+        .card-title
+          h6 = comment.user.email
+        .card-body
+          p.card-text = comment.content
+
+        - if comment.user == current_user
+          = link_to 'Destroy', post_comment_path(comment.post, comment.id),
+            data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+            class: 'btn btn-sm btn-link'
+        - if user_signed_in?
+          = link_to 'Respond', "#reply-form-#{comment.id}",
+          class: 'btn btn-sm btn-link', data: { bs_toggle: 'collapse' }
+
+        div id="reply-form-#{comment.id}" class="collapse mt-2"
+          = render 'comments/form',
+          post: comment.post,
+          comment: comment.post.post_comments.new,
+          parent_id: comment.id
+
+        - if comment.children.any?
+          .card-footer
+            h6 Replies
+            - comment.children.each do |child|
+              .card.mb-3
+                = render 'comments/comment', comment: child

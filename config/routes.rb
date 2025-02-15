@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :posts, except: :index
+  resources :posts, except: :index do
+    resources :comments, only: %i[create destroy]
+  end
   devise_for :users
   root 'posts#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

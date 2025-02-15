@@ -971,3 +971,2045 @@ Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms (1 query, 0 cached
 [Transport] Sending envelope with items [transaction] 2c902c8cad1c422e84ea334b2938cc3e to Sentry
 [Transport] Sending envelope with items [sessions]  to Sentry
 Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "post_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "post_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "ancestry" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_ancestry" ON "post_comments" ("ancestry")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_post_id" ON "post_comments" ("post_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_user_id" ON "post_comments" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "category_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apost_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "ancestry" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_user_id" ON "apost_comments" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_post_id" ON "apost_comments" ("post_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_ancestry" ON "apost_comments" ("ancestry")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "apost_comments" ("id","content","post_id","user_id","created_at","updated_at","ancestry")
+                     SELECT "id","content","post_id","user_id","created_at","updated_at","ancestry" FROM "post_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "post_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "post_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "ancestry" varchar, CONSTRAINT "fk_rails_bfdc8d8659"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_ancestry" ON "post_comments" ("ancestry")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_post_id" ON "post_comments" ("post_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_user_id" ON "post_comments" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "post_comments" ("id","content","post_id","user_id","created_at","updated_at","ancestry")
+                     SELECT "id","content","post_id","user_id","created_at","updated_at","ancestry" FROM "apost_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apost_comments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apost_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "ancestry" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_user_id" ON "apost_comments" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_post_id" ON "apost_comments" ("post_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_apost_comments_on_ancestry" ON "apost_comments" ("ancestry")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "apost_comments" ("id","content","post_id","user_id","created_at","updated_at","ancestry")
+                     SELECT "id","content","post_id","user_id","created_at","updated_at","ancestry" FROM "post_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "post_comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "post_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "ancestry" varchar, CONSTRAINT "fk_rails_bfdc8d8659"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+, CONSTRAINT "fk_rails_56efacbd2f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_ancestry" ON "post_comments" ("ancestry")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_post_id" ON "post_comments" ("post_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_post_comments_on_user_id" ON "post_comments" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "post_comments" ("id","content","post_id","user_id","created_at","updated_at","ancestry")
+                     SELECT "id","content","post_id","user_id","created_at","updated_at","ancestry" FROM "apost_comments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "apost_comments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "category_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_category_id" ON "aposts" ("category_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aposts" ("id","title","body","category_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","category_id","user_id","created_at","updated_at" FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "category_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9b1b26f040"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("id","title","body","category_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","category_id","user_id","created_at","updated_at" FROM "aposts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "category_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_category_id" ON "aposts" ("category_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aposts" ("id","title","body","category_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","category_id","user_id","created_at","updated_at" FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "category_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9b1b26f040"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("id","title","body","category_id","user_id","created_at","updated_at")
+                     SELECT "id","title","body","category_id","user_id","created_at","updated_at" FROM "aposts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250211113614)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250211110511),
+(20250208172920),
+(20250208142923),
+(20250206150702);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-02-15 13:12:51.644986', '2025-02-15 13:12:51.644988') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '96b30516661fc4c0e8f34eb4d8412ac4a107f6dc', '2025-02-15 13:12:51.645680', '2025-02-15 13:12:51.645681') RETURNING "key"[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:12:51.744912', '2025-02-15 13:12:51.744912'), (298486374, 'MyString', '2025-02-15 13:12:51.744912', '2025-02-15 13:12:51.744912');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:12:51.746703', '2025-02-15 13:12:51.746703', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:12:51.746703', '2025-02-15 13:12:51.746703', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:12:51.746703', '2025-02-15 13:12:51.746703', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:12:51.746703', '2025-02-15 13:12:51.746703', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:12:51.748331', '2025-02-15 13:12:51.748331'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:12:51.748331', '2025-02-15 13:12:51.748331');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$BcVJ6aUPkoC66/FLvf/wV.O9eYx7aSWUCHOdzxoHJe7Eh8W05AjuS', NULL, NULL, NULL, '2025-02-15 13:12:51', '2025-02-15 13:12:51'), (298486374, 'user2@example.com', '$2a$04$pSkukWPwAWb6J0zD935pP.cbn3iLslLXW60FgLtfbM1Y4gmvE9/ha', NULL, NULL, NULL, '2025-02-15 13:12:51', '2025-02-15 13:12:51')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:12:51 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000011f5d5140>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:12:51.844748"], ["updated_at", "2025-02-15 13:12:51.844748"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] fc0330b1b94d4f75b295af1670d62652 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:12:51 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000011c150640>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+[Transport] Sending envelope with items [transaction] 13856b74ca014843afaf56d3717967e1 to Sentry
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:12:51 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.8ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 39.8ms | GC: 14.4ms)
+Completed 200 OK in 265ms (Views: 43.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 70.6ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] c175c469b4f749d6946c4aeaf45500a2 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:12:52 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 18.3ms | GC: 0.0ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 20.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 68b7ccac60e146828e2344b2e6454d52 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:12:52 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 8ms (ActiveRecord: 0.6ms (13 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 30a37a7aa74e4ad592f4a9e77b676ae8 to Sentry
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:12:52 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 95b862ac62d345adac848fbac797495a to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:12:52 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.7ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 8.9ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 22.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 22.8ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.5ms (18 queries, 8 cached) | GC: 0.0ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 2ba64b65bf024e888813856c05566456 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Event sending failed: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+exception happened in background worker: Failed to open TCP connection to o4508766559666176.ingest.us.sentry.io:443 (getaddrinfo: nodename nor servname provided, or not known)
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:14:17.687233', '2025-02-15 13:14:17.687233'), (298486374, 'MyString', '2025-02-15 13:14:17.687233', '2025-02-15 13:14:17.687233');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:14:17.688386', '2025-02-15 13:14:17.688386', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:14:17.688386', '2025-02-15 13:14:17.688386', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:14:17.688386', '2025-02-15 13:14:17.688386', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:14:17.688386', '2025-02-15 13:14:17.688386', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:14:17.689920', '2025-02-15 13:14:17.689920'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:14:17.689920', '2025-02-15 13:14:17.689920');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$DQVVhT4ciPzR.DtvRaDLwOYW2t5go7oy3VxIEMG/lc6JZJQZI7x7e', NULL, NULL, NULL, '2025-02-15 13:14:17', '2025-02-15 13:14:17'), (298486374, 'user2@example.com', '$2a$04$PSIDo7tMOXdqkig90Q0UPO.NGArY4TU8/HlFpHDIoSciMp3A1byna', NULL, NULL, NULL, '2025-02-15 13:14:17', '2025-02-15 13:14:17')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:14:17 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 4.3ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 15.3ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 9.1ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 49.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 21.5ms | GC: 17.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 83.3ms | GC: 17.3ms)
+Completed 200 OK in 305ms (Views: 85.6ms | ActiveRecord: 0.5ms (18 queries, 8 cached) | GC: 61.9ms)
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 27fadcb5ed6248179cafa2ce13adc450 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 6.9ms | GC: 0.3ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 9.3ms | GC: 0.3ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 9.8ms | GC: 0.3ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.3ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] bd411200681f4b0988264e46227b451c to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000012735dc20>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:14:18.130451"], ["updated_at", "2025-02-15 13:14:18.130451"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.1ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] a462eef4c0574cd591cde1faaeb6c1ad to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 4ms (ActiveRecord: 0.6ms (13 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 94bab321a37049349009f74af9f1ba53 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000127352fa0>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:14:18 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 2.0ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] bd0f60c6db7f4aec8e33ff52f0940f65 to Sentry
+[Transport] Sending envelope with items [transaction] 746bc78bd24046708f261f33965b1372 to Sentry
+[Transport] Sending envelope with items [transaction] 142294fbd65549eb81d96289e0422868 to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:15:06.050797', '2025-02-15 13:15:06.050797'), (298486374, 'MyString', '2025-02-15 13:15:06.050797', '2025-02-15 13:15:06.050797');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:15:06.052387', '2025-02-15 13:15:06.052387', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:15:06.052387', '2025-02-15 13:15:06.052387', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:15:06.052387', '2025-02-15 13:15:06.052387', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:15:06.052387', '2025-02-15 13:15:06.052387', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:15:06.053896', '2025-02-15 13:15:06.053896'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:15:06.053896', '2025-02-15 13:15:06.053896');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$cM12vQSATNMX8tVdxq2pDONnjt9toeC/hO1mV99bBjrNGuz6XY7Mu', NULL, NULL, NULL, '2025-02-15 13:15:06', '2025-02-15 13:15:06'), (298486374, 'user2@example.com', '$2a$04$hMSeTgj5X.k/Q0CQcuy/S.M/8u5iCVijMWW0EQk5lukd.M.e0ehUC', NULL, NULL, NULL, '2025-02-15 13:15:06', '2025-02-15 13:15:06')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 19.4ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 27.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 41.6ms | GC: 0.0ms)
+Completed 200 OK in 268ms (Views: 44.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 56.0ms)
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 4ba4cfd8a74b4c83974b1e6dd2ea9b1a to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.8ms | GC: 0.0ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 18.5ms | GC: 14.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 19.0ms | GC: 14.5ms)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 14.5ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] e9c5e42d6a5e4e7eb8a48fc491eeeda0 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000126f2b558>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:15:06.451266"], ["updated_at", "2025-02-15 13:15:06.451266"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] fc6a379a5465448ba213868c3f605028 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 8ms (ActiveRecord: 0.5ms (13 queries, 1 cached) | GC: 0.2ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] a0fdcdf7405743b6a11b60e9d8da7180 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 2.9ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.2ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 8.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 21.2ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 21.7ms | GC: 0.1ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.4ms (18 queries, 8 cached) | GC: 0.1ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x00000001012c5518>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] 1c112ba6ff2e436cbe55b1e98825cd2f to Sentry
+[Transport] Sending envelope with items [transaction] 9c7362759f3d4b2abfc20369638a17b5 to Sentry
+[Transport] Sending envelope with items [transaction] 4a7f8517307b4f2284c331d8c2af5695 to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:15:29.540300', '2025-02-15 13:15:29.540300'), (298486374, 'MyString', '2025-02-15 13:15:29.540300', '2025-02-15 13:15:29.540300');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:15:29.542077', '2025-02-15 13:15:29.542077', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:15:29.542077', '2025-02-15 13:15:29.542077', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:15:29.542077', '2025-02-15 13:15:29.542077', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:15:29.542077', '2025-02-15 13:15:29.542077', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:15:29.543554', '2025-02-15 13:15:29.543554'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:15:29.543554', '2025-02-15 13:15:29.543554');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$Hbil.oW1a2tm2RvmMZTTbeOFqiDZnmc4QnP/8vUTIyxLwE3pr0cHi', NULL, NULL, NULL, '2025-02-15 13:15:29', '2025-02-15 13:15:29'), (298486374, 'user2@example.com', '$2a$04$gc0zU3KTEqG.4cO42sABGenZPgpNdwkf2mpB8A3OOuDmFVD0oKjIi', NULL, NULL, NULL, '2025-02-15 13:15:29', '2025-02-15 13:15:29')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+CommentsControllerTest - test_should_create_post_comment: ActionController::UrlGenerationError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000011c3b6ce0>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] e5224dc95244442291bdaf4f0d96afd2 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000011c0f1f50>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:15:29.668115"], ["updated_at", "2025-02-15 13:15:29.668115"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 11.5ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 28c1045edbe5405681eddf9f141a3ed7 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 10.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 44.9ms | GC: 18.7ms)
+Completed 200 OK in 260ms (Views: 48.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 65.3ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 77ca6d62afe34a44be7cba1236b02766 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 15.3ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 9.2ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 38.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 38.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.5ms (18 queries, 8 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] ff319f57d8ad4e2d9a809cfd68fa5613 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 4ms (ActiveRecord: 0.6ms (13 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:15:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 5.9ms | GC: 0.0ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:15:30 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] 74003994ed644f3fa4e3b9e3af47957c to Sentry
+[Transport] Sending envelope with items [transaction] 7dd9eb331ac64d95a29ce50f170bdaca to Sentry
+[Transport] Sending envelope with items [transaction] 337487fc50f849c4b0d2e7d32af52dcc to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:15:59.902970', '2025-02-15 13:15:59.902970'), (298486374, 'MyString', '2025-02-15 13:15:59.902970', '2025-02-15 13:15:59.902970');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:15:59.904523', '2025-02-15 13:15:59.904523', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:15:59.904523', '2025-02-15 13:15:59.904523', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:15:59.904523', '2025-02-15 13:15:59.904523', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:15:59.904523', '2025-02-15 13:15:59.904523', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:15:59.905999', '2025-02-15 13:15:59.905999'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:15:59.905999', '2025-02-15 13:15:59.905999');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$PpAfEU8TZy6L..rcp3KUy.FclPRCfHlaxfUbbtqJp82EaDz4Uk/Q2', NULL, NULL, NULL, '2025-02-15 13:15:59', '2025-02-15 13:15:59'), (298486374, 'user2@example.com', '$2a$04$52OC6xDtk9iq/GvUgT3r9Oh9e.8YR/0ITdLfJ2Oyvk2YqYAZMtWLK', NULL, NULL, NULL, '2025-02-15 13:15:59', '2025-02-15 13:15:59')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+CommentsControllerTest - test_should_create_post_comment: ActionController::UrlGenerationError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:15:59 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 22.9ms | GC: 0.0ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 32.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 47.4ms | GC: 0.0ms)
+Completed 200 OK in 296ms (Views: 50.4ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 59.2ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] f2920908448644829927ab41a144d033 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 7ms (ActiveRecord: 0.5ms (13 queries, 1 cached) | GC: 0.6ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] dbbd6ed40bad432b8b84cc1001aeeb14 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 2.7ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 3.1ms | GC: 0.1ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 8.9ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 22.2ms | GC: 0.6ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 22.7ms | GC: 0.6ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.5ms (18 queries, 8 cached) | GC: 0.6ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 9d4cb0885e274578a1d09910cdfe1aeb to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x00000001245508c8>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 8015348d3080420881f6a66aa33b3da2 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:16:00 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x00000001204ac808>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:16:00.392079"], ["updated_at", "2025-02-15 13:16:00.392079"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] 97256b7dbcb143afab0b010db2365a14 to Sentry
+[Transport] Sending envelope with items [transaction] 864e303b8d2c40f0bf1a0aed36d49f4a to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [transaction] caa6b7387c974049b402cbada76956dd to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:16:26.121364', '2025-02-15 13:16:26.121364'), (298486374, 'MyString', '2025-02-15 13:16:26.121364', '2025-02-15 13:16:26.121364');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:16:26.122738', '2025-02-15 13:16:26.122738', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:16:26.122738', '2025-02-15 13:16:26.122738', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:16:26.122738', '2025-02-15 13:16:26.122738', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:16:26.122738', '2025-02-15 13:16:26.122738', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:16:26.124217', '2025-02-15 13:16:26.124217'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:16:26.124217', '2025-02-15 13:16:26.124217');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$FE58zgNHt5JFFIjFGt68qeJmcN0mexjdWBShtMknRyUcv/Rhcb0qu', NULL, NULL, NULL, '2025-02-15 13:16:26', '2025-02-15 13:16:26'), (298486374, 'user2@example.com', '$2a$04$wIpVG39488xnrJhCZcpYguCO9WT4IWoIADTExzxZK77IQRrGn1eV2', NULL, NULL, NULL, '2025-02-15 13:16:26', '2025-02-15 13:16:26')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 23.2ms | GC: 0.0ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 31.0ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 46.1ms | GC: 0.0ms)
+Completed 200 OK in 288ms (Views: 49.4ms | ActiveRecord: 0.2ms (3 queries, 1 cached) | GC: 63.8ms)
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 2d49f626b0814dba910ad481bd07971a to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 3.0ms | GC: 0.1ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.5ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.2ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] c0e5465586904b17953f20e7d1c0cf4a to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 8ms (ActiveRecord: 0.5ms (13 queries, 1 cached) | GC: 0.3ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] a3651fc57076414d9f757c834b5be7d8 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 2.7ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 8.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 22.2ms | GC: 0.4ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 22.7ms | GC: 0.4ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.5ms (18 queries, 8 cached) | GC: 0.4ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 9ea2644f03c44cd0ae6bc88eb777f2e7 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000120685148>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:16:26 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000120680b48>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:16:26.599221"], ["updated_at", "2025-02-15 13:16:26.599221"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+CommentsControllerTest - test_should_create_post_comment: NoMethodError raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `assert_difference`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] a054f93681a347bda9bb2c67036cbd63 to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [transaction] 4e2a60588ea04605bca5764ba7156983 to Sentry
+[Transport] Sending envelope with items [transaction] 82af65bc2b354dfe87a704f49b513908 to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:17:05.582899', '2025-02-15 13:17:05.582899'), (298486374, 'MyString', '2025-02-15 13:17:05.582899', '2025-02-15 13:17:05.582899');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:17:05.584070', '2025-02-15 13:17:05.584070', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:17:05.584070', '2025-02-15 13:17:05.584070', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:17:05.584070', '2025-02-15 13:17:05.584070', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:17:05.584070', '2025-02-15 13:17:05.584070', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:17:05.585517', '2025-02-15 13:17:05.585517'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:17:05.585517', '2025-02-15 13:17:05.585517');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$LSdmwTy3p3nKjyx/YFPW1uiP1zzWDH4sK9AAqE6uy.0ADDHjN0dPa', NULL, NULL, NULL, '2025-02-15 13:17:05', '2025-02-15 13:17:05'), (298486374, 'user2@example.com', '$2a$04$aB5FAcX4Hc4FIOruzxT7E.FxnkWKQio57HBIZUvuT989iEhUU5ms6', NULL, NULL, NULL, '2025-02-15 13:17:05', '2025-02-15 13:17:05')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+Started POST "/posts/980190962/comments" for 127.0.0.1 at 2025-02-15 16:17:05 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/comments>
+[Profiler] Started
+Processing by CommentsController#create as HTML
+  Parameters: {"post_comment"=>{"content"=>"first", "parent_id"=>nil}, "post_id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Create (0.2ms)[0m  [1m[32mINSERT INTO "post_comments" ("content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "first"], ["post_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:17:05.693477"], ["updated_at", "2025-02-15 13:17:05.693477"], ["ancestry", "/"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.5ms)
+[Profiler] Stopped
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 7ebf774ac478431d84f8a32d12474791 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:17:05 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 26.7ms | GC: 0.0ms)
+Completed 200 OK in 270ms (Views: 29.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 67.4ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] f250559fa7044e17b5644dea3549cce6 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:17:05 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000104f6d998>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] cfc498db683440a7a401f4da85c38aae to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:17:05 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 20.4ms | GC: 0.4ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 37.3ms | GC: 14.7ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 37.8ms | GC: 14.7ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 14.7ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] e2874d780fd04f4ca7cb83f422bd5e57 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:17:06 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.7ms | GC: 0.1ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.6ms | GC: 0.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 4.1ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.2ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:17:06 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x000000013135f2a0>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:17:06.047914"], ["updated_at", "2025-02-15 13:17:06.047914"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:17:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 5ms (ActiveRecord: 0.6ms (13 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:17:06 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 3.2ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 4.8ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.7ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.9ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 10.5ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 27.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 28.1ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.7ms (18 queries, 8 cached) | GC: 0.0ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] 3a48b6fc6eb741599a27914db9575ecd to Sentry
+[Transport] Sending envelope with items [transaction] 9fd041811f77401cb796eac3e21b2247 to Sentry
+[Transport] Sending envelope with items [transaction] 6ff5ce9531fd4b9a901c5b18d336e3f5 to Sentry
+[Transport] Sending envelope with items [transaction] 3ca0050c61264458aec006dd699120c7 to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "categories";
+DELETE FROM "post_comments";
+DELETE FROM "posts";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2025-02-15 13:18:29.629024', '2025-02-15 13:18:29.629024'), (298486374, 'MyString', '2025-02-15 13:18:29.629024', '2025-02-15 13:18:29.629024');
+INSERT INTO "post_comments" ("id", "content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (980190962, 'first', 980190962, 980190962, '2025-02-15 13:18:29.630299', '2025-02-15 13:18:29.630299', '/'), (647284951, 'this is comment with comments', 980190962, 980190962, '2025-02-15 13:18:29.630299', '2025-02-15 13:18:29.630299', '/'), (717865707, 'commented comment', 980190962, 980190962, '2025-02-15 13:18:29.630299', '2025-02-15 13:18:29.630299', '/647284951/'), (141964304, 'deep comment', 980190962, 980190962, '2025-02-15 13:18:29.630299', '2025-02-15 13:18:29.630299', '/647284951/717865707/');
+INSERT INTO "posts" ("id", "title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', 980190962, 980190962, '2025-02-15 13:18:29.631755', '2025-02-15 13:18:29.631755'), (298486374, 'MyString', 'MyText', 298486374, 980190962, '2025-02-15 13:18:29.631755', '2025-02-15 13:18:29.631755');
+INSERT INTO "users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (980190962, 'user1@example.com', '$2a$04$QlJ98XPYiuOJk8uMjtEjMOzRGusndGSY0qUNljiqy5q7QqlREhF0y', NULL, NULL, NULL, '2025-02-15 13:18:29', '2025-02-15 13:18:29'), (298486374, 'user2@example.com', '$2a$04$nqr3sxhh3HetTnPoRrSnzudGl7UtERabzyntpzL86LkNufq.Aty8e', NULL, NULL, NULL, '2025-02-15 13:18:29', '2025-02-15 13:18:29')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+PostsControllerTest: test_should_destroy_post
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:18:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 980190962]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/141964304/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 141964304]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 647284951]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/647284951/717865707/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 717865707]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mPost Destroy (0.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 303 See Other in 37ms (ActiveRecord: 1.0ms (13 queries, 1 cached) | GC: 16.1ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] 49e56fb64b2f41579ade57981eb1c14f to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_show_post
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:18:29 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered posts/_post.html.slim (Duration: 4.8ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = ? LIMIT ?[0m  [["post_id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 15.6ms | GC: 0.0ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ? AND "post_comments"."ancestry" = '/'[0m  [["post_id", 980190962]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/' LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/'[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/647284951/717865707/141964304/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 3.5ms | GC: 0.0ms)
+  Rendered comments/_comment.html.slim (Duration: 9.0ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/980190962/' LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered comments/_comment.html.slim (Duration: 1.2ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 44.2ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.8ms | GC: 0.2ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.slim (Duration: 74.1ms | GC: 15.1ms)
+Completed 200 OK in 249ms (Views: 76.5ms | ActiveRecord: 0.6ms (18 queries, 8 cached) | GC: 33.8ms)
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction, profile] a5256d9dea40490c98c72563b01f9fa8 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/980190962/edit" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/edit>
+[Profiler] Started
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.slim
+  Rendering posts/edit.html.slim within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 6.4ms | GC: 0.2ms)
+  Rendered posts/edit.html.slim within layouts/application (Duration: 9.9ms | GC: 0.3ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 10.5ms | GC: 0.4ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms (3 queries, 1 cached) | GC: 0.4ms)
+[Profiler] Stopped
+[Profiler] Not enough samples, discarding profiler
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 7e2f88730a484b7097c3850f7817a3a3 to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/posts/new" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts/new>
+[Profiler] Started
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/new.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_form.html.slim (Duration: 1.6ms | GC: 0.0ms)
+  Rendered posts/new.html.slim within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Transport] Sending envelope with items [transaction] 8b5d79c6b6504ac28a3977b759b0bcef to Sentry
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.slim within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_update_post
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/posts/980190962" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962>
+[Profiler] Started
+Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000100c58720>"}, "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (2 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+PostsControllerTest: test_should_create_post
+--------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/posts" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts>
+[Profiler] Started
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"MyText", "category_id"=>"980190962", "title"=>"MyString", "creator"=>"#<User:0x0000000100c53fe0>"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "category_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "MyString"], ["body", "MyText"], ["category_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:18:30.077134"], ["updated_at", "2025-02-15 13:18:30.077134"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------
+CommentsControllerTest: test_should_destroy_post_comment
+--------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+Started DELETE "/posts/980190962/comments/980190962" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/comments/980190962>
+[Profiler] Started
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"980190962", "id"=>"980190962"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."ancestry" LIKE '/980190962/%'[0m
+  [1m[36mPostComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (5 queries, 1 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------
+CommentsControllerTest: test_should_create_post_comment
+-------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+Started POST "/posts/980190962/comments" for 127.0.0.1 at 2025-02-15 16:18:30 +0300
+[Tracing] Starting <http.server> transaction </posts/980190962/comments>
+[Profiler] Started
+Processing by CommentsController#create as HTML
+  Parameters: {"post_comment"=>{"content"=>"first", "parent_id"=>nil}, "post_id"=>"980190962"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPostComment Create (0.2ms)[0m  [1m[32mINSERT INTO "post_comments" ("content", "post_id", "user_id", "created_at", "updated_at", "ancestry") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["content", "first"], ["post_id", 980190962], ["user_id", 980190962], ["created_at", "2025-02-15 13:18:30.089100"], ["updated_at", "2025-02-15 13:18:30.089100"], ["ancestry", "/"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+[Profiler] Stopped
+  [1m[36mPostComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+[Sentry::SessionFlusher] thread killed
+[Transport] Sending envelope with items [client_report]  to Sentry
+[Transport] Sending envelope with items [transaction] f63b4d60847a4fa1a4e90c6554795a53 to Sentry
+[Transport] Sending envelope with items [transaction] d0a9f245cb6e4d38a775211db7c2a5a9 to Sentry
+[Transport] Sending envelope with items [transaction] b3ab2b5bba7e47408df80dc345e842e0 to Sentry
+[Transport] Sending envelope with items [transaction] e5ac78072b9644eaad9318212a88cef0 to Sentry
+Shutting down background worker
+[Transport] Sending envelope with items [transaction] 68e19f373d1941638312384bceffef5b to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry

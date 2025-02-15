@@ -10,6 +10,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-5.times do
+10.times do
   Category.create(name: Faker::Sport.sport)
 end

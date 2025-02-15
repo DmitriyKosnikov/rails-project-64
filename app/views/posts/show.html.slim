@@ -1,5 +1,3 @@
-p style="color: green" = notice
-
 == render @post
 
 div
@@ -9,3 +7,16 @@ div
     = link_to 'Delete this post', post_path(@post),
      data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
      class: 'btn btn-outline-danger'
+
+- if @post.post_comments.any?
+  h2 Comments
+
+- if user_signed_in?
+  = render 'comments/form', post: @post, comment: @post.post_comments.new,
+  parent_id: params[:parent_id]
+
+br
+
+- @post.post_comments.roots.each do |comment|
+  = render 'comments/comment', comment: comment
+  br
