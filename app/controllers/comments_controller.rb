@@ -5,7 +5,7 @@ class CommentsController < ApplicationController # rubocop:disable Style/Documen
   before_action :authenticate_user!
 
   def create
-    @comment = @post.post_comments.build(comments_params)
+    @comment = @post.comments.build(comments_params)
     @comment.user = current_user
 
     if @comment.save

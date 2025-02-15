@@ -18,7 +18,7 @@
         div id="reply-form-#{comment.id}" class="collapse mt-2"
           = render 'comments/form',
           post: comment.post,
-          comment: comment.post.post_comments.new,
+          comment: comment.post.comments.new,
           parent_id: comment.id
 
         - if comment.children.any?

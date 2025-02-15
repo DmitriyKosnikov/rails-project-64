@@ -13,18 +13,18 @@ p.small
        data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
        class: 'btn btn-outline-danger'
   .likes-section
-    span = @post.post_likes.count
+    span = @post.likes.count
     = render 'likes/like', post: @post
 
-- if @post.post_comments.any?
+- if @post.comments.any?
   h2 Comments
 
 - if user_signed_in?
-  = render 'comments/form', post: @post, comment: @post.post_comments.new,
+  = render 'comments/form', post: @post, comment: @post.comments.new,
   parent_id: params[:parent_id]
 
 br
 
-- @post.post_comments.roots.each do |comment|
+- @post.comments.roots.each do |comment|
   = render 'comments/comment', comment: comment
   br

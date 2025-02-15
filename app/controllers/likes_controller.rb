@@ -5,7 +5,7 @@ class LikesController < ApplicationController # rubocop:disable Style/Documentat
   before_action :set_post
 
   def create
-    @like = @post.post_likes.build(user: current_user)
+    @like = @post.likes.build(user: current_user)
 
     if @like.save
       redirect_to post_path(@post)
@@ -15,7 +15,7 @@ class LikesController < ApplicationController # rubocop:disable Style/Documentat
   end
 
   def destroy
-    @like = @post.post_likes.find(params[:id])
+    @like = @post.likes.find(params[:id])
 
     @like.destroy if @like.user == current_user
     redirect_to post_path(@post)
