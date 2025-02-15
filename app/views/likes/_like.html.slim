@@ -1,0 +1,12 @@
+- if user_signed_in?
+  - @like = post.post_likes.find_by(user_id: current_user)
+  - if @like.nil?
+    = link_to post_likes_path(post),
+    data: { 'turbo-method': :post }, class: 'btn' do
+      i.bi.bi-hand-thumbs-up
+  - else
+    = link_to post_like_path(post, @like.id),
+    data: { 'turbo-method': :delete }, class: 'btn' do
+      i.bi.bi-hand-thumbs-up-fill
+- else
+  i.bi.bi-hand-thumbs-up

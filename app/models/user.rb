@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, foreign_key: 'user_id'
   has_many :post_comments, foreign_key: 'user_id', dependent: :destroy
+  has_many :post_likes, foreign_key: 'user_id', dependent: :destroy
 end

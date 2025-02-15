@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources :posts, except: :index do
     resources :comments, only: %i[create destroy]
+    resources :likes, only: %i[create destroy]
   end
   devise_for :users
   root 'posts#index'

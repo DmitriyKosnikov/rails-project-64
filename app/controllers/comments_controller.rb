@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController # rubocop:disable Style/Documentation
-  before_action :set_post, only: %i[create destroy]
-  before_action :authenticate_user!, only: %i[create destroy]
+  before_action :set_post
+  before_action :authenticate_user!
 
   def create
     @comment = @post.post_comments.build(comments_params)
