@@ -53177,3 +53177,560 @@ Completed 200 OK in 40ms (Views: 11.1ms | ActiveRecord: 0.4ms (11 queries, 2 cac
 [Sentry::SessionFlusher] thread killed
 Shutting down background worker
 [Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/posts/10" for ::1 at 2025-02-17 01:33:50 +0300
+[Tracing] Starting <http.server> transaction </posts/10>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.slim:6
+  Rendered posts/_post.html.slim (Duration: 22.1ms | GC: 12.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:10
+  [1m[36mPostLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = 10 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:16
+  [1m[36mPostLike Load (0.1ms)[0m  [1m[34mSELECT "post_likes".* FROM "post_likes" WHERE "post_likes"."post_id" = 10 AND "post_likes"."user_id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/likes/_like.html.slim:2
+  Rendered likes/_like.html.slim (Duration: 16.4ms | GC: 13.1ms)
+  [1m[36mPostComment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:19
+  Rendered comments/_form.html.slim (Duration: 18.4ms | GC: 0.4ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = 10 AND "post_comments"."ancestry" = '/' /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/comments/_comment.html.slim:6
+  Rendered comments/_form.html.slim (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/41/' LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/comments/_comment.html.slim:24
+  Rendered comments/_comment.html.slim (Duration: 6.8ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 123.6ms | GC: 50.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 138.2ms | GC: 50.5ms)
+Completed 500 Internal Server Error in 372ms (ActiveRecord: 2.9ms (11 queries, 2 cached) | GC: 77.1ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+):
+1:    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+2:      .container-fluid
+3:        = link_to t('application.title'), root_path, class: 'navbar-brand'
+4:        button.navbar-toggler type="button"
+5:         data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+6:          span.navbar-toggler-icon
+7:        #navbarCollapse.collapse.navbar-collapse
+8:          ul.navbar-nav.me-auto.mb-2.mb-md-0
+9:            - if user_signed_in?
+10:              li.nav-item
+11:                = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+12:          ul.navbar-nav.ms-auto.mb-2.mb-md-0
+13:            - if user_signed_in?
+14:              li.nav-item
+15:                = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+16:            - else
+17:              li.nav-item
+18:                = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+19:              li.nav-item
+20:                = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+Started GET "/" for ::1 at 2025-02-17 01:33:52 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Not started since running elsewhere
+Processing by PostsController#index as HTML
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [event] 4ae70af866fd497d95021f1b8c0b44a0 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 094c44169ea44a77aca776617b28b3aa to Sentry
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.slim:4
+  Rendered posts/index.html.slim within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 8.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+     data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+):
+1:    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+2:      .container-fluid
+3:        = link_to t('application.title'), root_path, class: 'navbar-brand'
+4:        button.navbar-toggler type="button"
+5:         data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+6:          span.navbar-toggler-icon
+7:        #navbarCollapse.collapse.navbar-collapse
+8:          ul.navbar-nav.me-auto.mb-2.mb-md-0
+9:            - if user_signed_in?
+10:              li.nav-item
+11:                = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+12:          ul.navbar-nav.ms-auto.mb-2.mb-md-0
+13:            - if user_signed_in?
+14:              li.nav-item
+15:                = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+16:            - else
+17:              li.nav-item
+18:                = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+19:              li.nav-item
+20:                = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+[Transport] Sending envelope with items [event] 580e489669c14c2dacfd5f9ca80fa7d2 to Sentry
+[Transport] Sending envelope with items [transaction] 17c412bc3e194b92b2a9c6a85aa878c9 to Sentry
+Started GET "/posts/10" for ::1 at 2025-02-17 01:34:36 +0300
+[Tracing] Starting <http.server> transaction </posts/10>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.slim:6
+  Rendered posts/_post.html.slim (Duration: 6.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:10
+  [1m[36mPostLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = 10 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:16
+  [1m[36mPostLike Load (0.0ms)[0m  [1m[34mSELECT "post_likes".* FROM "post_likes" WHERE "post_likes"."post_id" = 10 AND "post_likes"."user_id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/likes/_like.html.slim:2
+  Rendered likes/_like.html.slim (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:19
+  Rendered comments/_form.html.slim (Duration: 7.8ms | GC: 3.1ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = 10 AND "post_comments"."ancestry" = '/' /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/comments/_comment.html.slim:6
+  Rendered comments/_form.html.slim (Duration: 0.7ms | GC: 0.1ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/41/' LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/comments/_comment.html.slim:24
+  Rendered comments/_comment.html.slim (Duration: 6.7ms | GC: 0.7ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 61.3ms | GC: 13.9ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 4.1ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.slim (Duration: 71.1ms | GC: 15.0ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 2.3ms (11 queries, 2 cached) | GC: 15.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+    data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button"
+    data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+):
+1:    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+2:      .container-fluid
+3:        = link_to t('application.title'), root_path, class: 'navbar-brand'
+4:        button.navbar-toggler type="button"
+5:        data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+6:          span.navbar-toggler-icon
+7:        #navbarCollapse.collapse.navbar-collapse
+8:          ul.navbar-nav.me-auto.mb-2.mb-md-0
+9:            - if user_signed_in?
+10:              li.nav-item
+11:                = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+12:          ul.navbar-nav.ms-auto.mb-2.mb-md-0
+13:            - if user_signed_in?
+14:              li.nav-item
+15:                = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+16:            - else
+17:              li.nav-item
+18:                = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+19:              li.nav-item
+20:                = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+...lim_controls1 = "collapse" data-bs-target="#navbarCollapse" ...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:5: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:22: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [event] f1b0b1c992234043805a39c46eac29e8 to Sentry
+[Transport] Sending envelope with items [transaction, profile] f3b2be9d8c86445b8a8516522f61a65f to Sentry
+[Transport] Sending envelope with items [sessions]  to Sentry
+Started GET "/posts/10" for ::1 at 2025-02-17 01:35:06 +0300
+[Tracing] Starting <http.server> transaction </posts/10>
+[Profiler] Started
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.slim:6
+  Rendered posts/_post.html.slim (Duration: 6.6ms | GC: 0.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:10
+  [1m[36mPostLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = 10 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:16
+  [1m[36mPostLike Load (0.0ms)[0m  [1m[34mSELECT "post_likes".* FROM "post_likes" WHERE "post_likes"."post_id" = 10 AND "post_likes"."user_id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/likes/_like.html.slim:2
+  Rendered likes/_like.html.slim (Duration: 3.2ms | GC: 0.2ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:19
+  Rendered comments/_form.html.slim (Duration: 3.5ms | GC: 0.4ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = 10 AND "post_comments"."ancestry" = '/' /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/comments/_comment.html.slim:6
+  Rendered comments/_form.html.slim (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/41/' LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/comments/_comment.html.slim:24
+  Rendered comments/_comment.html.slim (Duration: 6.8ms | GC: 0.1ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 44.8ms | GC: 2.2ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 55.2ms | GC: 2.2ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 2.2ms (11 queries, 2 cached) | GC: 2.8ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler.type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:4: syntax error, unexpected local variable or method, expecting `end' or dummy end
+..._slim_controls1 = "button" data-bs-toggle="collapse" data-bs...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  .container-fluid
+    = link_to t('application.title'), root_path, class: 'navbar-brand'
+    button.navbar-toggler.type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+        - if user_signed_in?
+          li.nav-item
+            = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+        - else
+          li.nav-item
+            = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+          li.nav-item
+            = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+
+):
+1:    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+2:      .container-fluid
+3:        = link_to t('application.title'), root_path, class: 'navbar-brand'
+4:        button.navbar-toggler.type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+5:          span.navbar-toggler-icon
+6:        #navbarCollapse.collapse.navbar-collapse
+7:          ul.navbar-nav.me-auto.mb-2.mb-md-0
+8:            - if user_signed_in?
+9:              li.nav-item
+10:                = link_to t('navbar.new'), new_post_path, class: 'nav-link'
+11:          ul.navbar-nav.ms-auto.mb-2.mb-md-0
+12:            - if user_signed_in?
+13:              li.nav-item
+14:                = link_to t('navbar.signout'), destroy_user_session_path, class: 'nav-link', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' }
+15:            - else
+16:              li.nav-item
+17:                = link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link'
+18:              li.nav-item
+19:                = link_to t('navbar.login'), new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/shared/_navbar.html.slim:4: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:4: syntax error, unexpected local variable or method, expecting `end' or dummy end
+..._slim_controls1 = "button" data-bs-toggle="collapse" data-bs...
+...                           ^~~~
+/Users/dmitriy/Desktop/HexProj/rails-project-64/app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/layouts/shared/_navbar.html.slim:4: syntax error, unexpected local variable or method, expecting `end' or dummy end
+app/views/layouts/shared/_navbar.html.slim:21: syntax error, unexpected `end'
+app/views/layouts/application.html.slim:27
+[Profiler] Stopped
+[Transport] Sending envelope with items [event] b996b1a3460c4fa0ad4cde2877372378 to Sentry
+[Transport] Sending envelope with items [transaction, profile] 627a2ae7eb874f7bbb63e8bd12c38a9a to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/posts/10" for ::1 at 2025-02-17 01:36:15 +0300
+[Tracing] Starting <http.server> transaction </posts/10>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.slim:5
+  Rendered posts/_post.html.slim (Duration: 8.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:10
+  [1m[36mPostLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = 10 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:16
+  [1m[36mPostLike Load (0.0ms)[0m  [1m[34mSELECT "post_likes".* FROM "post_likes" WHERE "post_likes"."post_id" = 10 AND "post_likes"."user_id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/likes/_like.html.slim:2
+  Rendered likes/_like.html.slim (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:19
+  Rendered comments/_form.html.slim (Duration: 15.6ms | GC: 0.3ms)
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = 10 AND "post_comments"."ancestry" = '/' /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/comments/_comment.html.slim:6
+  Rendered comments/_form.html.slim (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/41/' LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/comments/_comment.html.slim:24
+  Rendered comments/_comment.html.slim (Duration: 6.1ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 81.8ms | GC: 15.5ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 97.3ms | GC: 15.5ms)
+Completed 200 OK in 313ms (Views: 98.2ms | ActiveRecord: 2.6ms (11 queries, 2 cached) | GC: 30.1ms)
+
+
+[Profiler] Stopped
+[Profiler] Some samples thrown away
+[Transport] Sending envelope with items [transaction, profile] 200b83d72b83402bbe5de6085b8126cd to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry

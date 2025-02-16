@@ -1,7 +1,6 @@
 div id="#{dom_id post}"
   h1 = post.title
   p = post.body
-  
-  div.creation_info
+  .creation_info
     p.small = post.creator.email
     p.small = post.created_at
