@@ -11,4 +11,3 @@ bundle exec rails assets:clean
 # Uncomment the following line:
 
 bundle exec rails db:migrate
-rails db:seed

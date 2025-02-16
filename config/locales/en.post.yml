@@ -1,0 +1,13 @@
+en:
+  post:
+    posts: Posts
+    back: Back to posts
+    show: Show this post
+    delete: Delete this post
+    edit: Edti this post
+
+    actions:
+      deleted: Post was succesfully deleted.
+      created: Post was successfully created.
+      updated: Post was successfully updated.
+      not_creator: You are not the creator of this post.

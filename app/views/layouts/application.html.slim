@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = content_for(:title) || "Rails Project 64"
+    title = content_for(:title) || t('application.title')
     meta name="viewport" content="width=device-width,initial-scale=1"
     meta name="apple-mobile-web-app-capable" content="yes"
     meta name="mobile-web-app-capable" content="yes"
@@ -31,4 +31,4 @@ html
         = yield
     footer.footer.mt-auto.py-3.bg-light
       .container
-      span.text-muted Place sticky footer content here.
+      span.text-muted = t('application.footer', year: Time.current.year)

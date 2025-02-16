@@ -1,7 +1,7 @@
 = simple_form_for([post, comment], url: post_comments_path(post)) do |f|
   .form-inputs
-    = f.input :content, label: 'Leave a comment', required: false
+    = f.input :content, label: t('comment.form_label'), required: false
     = f.hidden_field :parent_id, value: parent_id if defined?(parent_id)
 
   .form-actions
-    = f.button :submit, 'Submit', class: 'btn btn-outline-primary'
+    = f.button :submit, t('comment.submit'), class: 'btn btn-outline-primary'

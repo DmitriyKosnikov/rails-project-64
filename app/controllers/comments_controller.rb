@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CommentsController < ApplicationController # rubocop:disable Style/Documentation
+class CommentsController < ApplicationController
   before_action :set_post
   before_action :authenticate_user!
 
@@ -9,9 +9,9 @@ class CommentsController < ApplicationController # rubocop:disable Style/Documen
     @comment.user = current_user
 
     if @comment.save
-      redirect_to post_path(@post), notice: 'Comment was created.'
+      redirect_to post_path(@post), notice: t('comment.actions.created')
     else
-      redirect_to post_path(@post), alert: 'Cannot create comment.'
+      redirect_to post_path(@post), alert: t('comment.actions.cant_create')
     end
   end
 
@@ -20,9 +20,9 @@ class CommentsController < ApplicationController # rubocop:disable Style/Documen
     if @comment.user == current_user
       @comment.destroy!
 
-      redirect_to post_path(@post), notice: 'Comment was successfully deleted'
+      redirect_to post_path(@post), notice: t('comment.actions.deleted')
     else
-      redirect_to post_path(@post), notice: 'You are not the creator of this comment'
+      redirect_to post_path(@post), notice: t('comment.actions.not_creator')
     end
   end
 

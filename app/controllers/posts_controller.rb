@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PostsController < ApplicationController # rubocop:disable Style/Documentation
+class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new create edit destroy update]
 
@@ -23,17 +23,17 @@ class PostsController < ApplicationController # rubocop:disable Style/Documentat
   def edit
     return unless @post.creator != current_user
 
-    redirect_to @post, notice: 'Post been updated'
+    redirect_to @post, notice: t('post.actions.not_creator')
   end
 
   # POST /posts or /posts.json
-  def create # rubocop:disable Metrics/MethodLength
+  def create
     @post = Post.new(post_params)
     @post.creator = current_user if @post.new_record?
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: t('post.actions.created') }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,11 +43,11 @@ class PostsController < ApplicationController # rubocop:disable Style/Documentat
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
-  def update # rubocop:disable Metrics/MethodLength
+  def update
     if @post.creator == current_user
       respond_to do |format|
         if @post.update(post_params)
-          format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+          format.html { redirect_to @post, notice: t('post.actions.updated') }
           format.json { render :show, status: :ok, location: @post }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class PostsController < ApplicationController # rubocop:disable Style/Documentat
         end
       end
     else
-      redirect_to @post, notice: 'You are not the creator of this post.'
+      redirect_to @post, notice: t('post.actions.not_creator')
     end
   end
 
@@ -65,11 +65,11 @@ class PostsController < ApplicationController # rubocop:disable Style/Documentat
       @post.destroy!
 
       respond_to do |format|
-        format.html { redirect_to root_path, status: :see_other, notice: 'Post was successfully destroyed.' }
+        format.html { redirect_to root_path, status: :see_other, notice: t('post.actions.deleted') }
         format.json { head :no_content }
       end
     else
-      redirect_to @post, notice: 'You are not the creator of this post.'
+      redirect_to @post, notice: t('post.actions.not_creator')
     end
   end
 

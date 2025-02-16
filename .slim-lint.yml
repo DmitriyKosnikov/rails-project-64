@@ -1,9 +1,11 @@
+---
+
 exclude:
-  - 'app/views/layouts/**/*.slim'
+  - vendor/*
+  - node_modules/*
+  - '**/devise/**/*.slim'
 
 linters:
-  LineLength:
-    max: 100
 
-  RedundantDiv:
-    enabled: false
+  LineLength:
+    max: 180

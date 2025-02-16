@@ -8,11 +8,11 @@
           p.card-text = comment.content
 
         - if comment.user == current_user
-          = link_to 'Destroy', post_comment_path(comment.post, comment.id),
-            data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+          = link_to t('comment.respond'), post_comment_path(comment.post, comment.id),
+            data: { 'turbo-method': :delete, 'turbo-confirm': t('actions.confirm') },
             class: 'btn btn-sm btn-link'
         - if user_signed_in?
-          = link_to 'Respond', "#reply-form-#{comment.id}",
+          = link_to t('comment.destroy'), "#reply-form-#{comment.id}",
           class: 'btn btn-sm btn-link', data: { bs_toggle: 'collapse' }
 
         div id="reply-form-#{comment.id}" class="collapse mt-2"
@@ -23,7 +23,7 @@
 
         - if comment.children.any?
           .card-footer
-            h6 Replies
+            h6 t('comment.replies')
             - comment.children.each do |child|
               .card.mb-3
                 = render 'comments/comment', comment: child

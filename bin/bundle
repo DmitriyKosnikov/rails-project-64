@@ -18,10 +18,10 @@ m = Module.new do
   end
 
   def env_var_version
-    ENV['BUNDLER_VERSION']
+    ENV.fetch('BUNDLER_VERSION', nil)
   end
 
-  def cli_arg_version # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity,Metrics/MethodLength
+  def cli_arg_version # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
     return unless invoked_as_script? # don't want to hijack other binstubs
     return unless 'update'.start_with?(ARGV.first || ' ') # must be running `bundle update`
 
@@ -29,7 +29,7 @@ m = Module.new do
     update_index = nil
     ARGV.each_with_index do |a, i|
       bundler_version = a if update_index && update_index.succ == i && a.match?(Gem::Version::ANCHORED_VERSION_PATTERN)
-      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
+      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/o
 
       bundler_version = Regexp.last_match(1)
       update_index = i
@@ -38,8 +38,8 @@ m = Module.new do
   end
 
   def gemfile
-    gemfile = ENV['BUNDLE_GEMFILE']
-    return gemfile if gemfile && !gemfile.empty?
+    gemfile = ENV.fetch('BUNDLE_GEMFILE', nil)
+    return gemfile if gemfile.present?
 
     File.expand_path('../Gemfile', __dir__)
   end
@@ -57,7 +57,7 @@ m = Module.new do
     return unless File.file?(lockfile)
 
     lockfile_contents = File.read(lockfile)
-    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/o
 
     Regexp.last_match(1)
   end
@@ -83,7 +83,7 @@ m = Module.new do
     activate_bundler
   end
 
-  def activate_bundler # rubocop:disable Metrics/MethodLength
+  def activate_bundler
     gem_error = activation_error_handling do
       gem 'bundler', bundler_requirement
     end
@@ -96,7 +96,7 @@ m = Module.new do
       return
     end
 
-    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`" # rubocop:disable Layout/LineLength
+    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`"
     exit 42
   end
 

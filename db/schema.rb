@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 20_250_215_155_723) do # rubocop:disable Metrics/BlockLength
+ActiveRecord::Schema[8.0].define(version: 20_250_215_213_510) do
   create_table 'categories', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema[8.0].define(version: 20_250_215_155_723) do # rubocop:disab
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['post_id'], name: 'index_post_likes_on_post_id'
+    t.index %w[user_id post_id], name: 'index_post_likes_on_user_id_and_post_id', unique: true
     t.index ['user_id'], name: 'index_post_likes_on_user_id'
   end
 

@@ -28,4 +28,13 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  application:
+    footer: © Hexlet %{year}
+    title: Collective blog
+  navbar:
+    new: New Post
+    login: Log In
+    signup: Sign Up
+    signout: Sign Out
+  actions:
+    confirm: Are you sure?

@@ -1,0 +1,13 @@
+en:
+  comment:
+    actions:
+      created: Comment was created.
+      deleted: Comment was succesfully deleted.
+      not_creator: You are not the creator of this comment
+      cant_create: Cannot create comment.
+  
+    respond: Respond
+    destroy: Destroy
+    replies: Replies
+    submit: New comment
+    form_label: Leave a comment

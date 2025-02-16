@@ -1,10 +1,7 @@
 div id="#{dom_id post}"
-  p
-    strong Title:
-    =< post.title
-  p
-    strong Body:
-    =< post.body
-  p
-    strong Category:
-    =< Category.find(post.category_id).name
+  h1 = post.title
+  p = post.body
+  
+  div.creation_info
+    p.small = post.creator.email
+    p.small = post.created_at

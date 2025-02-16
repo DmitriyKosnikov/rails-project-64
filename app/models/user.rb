@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :posts, foreign_key: 'user_id'
-  has_many :post_comments, foreign_key: 'user_id', dependent: :destroy
-  has_many :post_likes, foreign_key: 'user_id', dependent: :destroy
+  has_many :posts, dependent: :destroy, inverse_of: :creator
+  has_many :post_comments, dependent: :destroy
+  has_many :post_likes, dependent: :destroy
 end

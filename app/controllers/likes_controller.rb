@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class LikesController < ApplicationController # rubocop:disable Style/Documentation
+class LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post
 
@@ -10,7 +10,7 @@ class LikesController < ApplicationController # rubocop:disable Style/Documentat
     if @like.save
       redirect_to post_path(@post)
     else
-      redirect_to post_path(@post), notice: 'Something went wrong'
+      redirect_to post_path(@post), notice: t('like.error')
     end
   end
 

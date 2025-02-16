@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module CommentsHelper # rubocop:disable Style/Documentation
+module CommentsHelper
 end
