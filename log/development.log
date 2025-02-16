@@ -53734,3 +53734,67 @@ Completed 200 OK in 313ms (Views: 98.2ms | ActiveRecord: 2.6ms (11 queries, 2 ca
 [Sentry::SessionFlusher] thread killed
 Shutting down background worker
 [Transport] Sending envelope with items [sessions]  to Sentry
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/posts/10" for ::1 at 2025-02-17 01:46:50 +0300
+[Tracing] Starting <http.server> transaction </posts/10>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 10 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.slim
+  Rendering posts/show.html.slim within layouts/application
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.slim:5
+  Rendered posts/_post.html.slim (Duration: 5.5ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:10
+  [1m[36mPostLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_likes" WHERE "post_likes"."post_id" = 10 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:16
+  [1m[36mPostLike Load (0.0ms)[0m  [1m[34mSELECT "post_likes".* FROM "post_likes" WHERE "post_likes"."post_id" = 10 AND "post_likes"."user_id" = 1 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/likes/_like.html.slim:2
+  Rendered likes/_like.html.slim (Duration: 2.3ms | GC: 0.2ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."post_id" = 10 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:19
+  Rendered comments/_form.html.slim (Duration: 11.2ms | GC: 0.2ms)
+  [1m[36mPostComment Load (0.0ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = 10 AND "post_comments"."ancestry" = '/' /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/show.html.slim:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/comments/_comment.html.slim:6
+  Rendered comments/_form.html.slim (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPostComment Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "post_comments" WHERE "post_comments"."ancestry" = '/41/' LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/comments/_comment.html.slim:24
+  Rendered comments/_comment.html.slim (Duration: 3.6ms | GC: 0.0ms)
+  Rendered posts/show.html.slim within layouts/application (Duration: 56.0ms | GC: 11.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 65.0ms | GC: 11.0ms)
+Completed 200 OK in 209ms (Views: 65.6ms | ActiveRecord: 2.1ms (11 queries, 2 cached) | GC: 20.9ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 18992e60d0304b448c85ea0b4c1b69db to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m

@@ -26,7 +26,7 @@ jobs:
         run: bundle install
 
       - name: Run RuboCop
-        run: rubocop -c rubocop.yml
+        run: bundle exec rubocop
 
       - name: Run Slim-Lint
-        run: bundle exec slim-lint -c .slim-lint.yml
+        run: bundle exec slim-lint app/views
