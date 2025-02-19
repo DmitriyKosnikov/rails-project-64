@@ -53798,3 +53798,70 @@ Shutting down background worker
 Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
 Initializing the Sentry background worker with 4 threads
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Sentry HTTP Transport will connect to https://o4508766559666176.ingest.us.sentry.io
+Initializing the Sentry background worker with 4 threads
+Started GET "/posts/3" for ::1 at 2025-02-19 17:38:47 +0300
+[Tracing] Starting <http.server> transaction </posts/3>
+[Profiler] Started
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RailsProject64'*/[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1 /*action='show',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+Completed 404 Not Found in 71ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=3):
+  
+app/controllers/posts_controller.rb:80:in `set_post'
+User excluded error: #<ActiveRecord::RecordNotFound: Couldn't find Post with 'id'=3>
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 0b8b390d3fba4fbd8700c32662d6f7b6 to Sentry
+Started GET "/" for ::1 at 2025-02-19 17:38:49 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.slim:4
+  Rendered posts/index.html.slim within layouts/application (Duration: 11.9ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 6.1ms | GC: 1.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 40.6ms | GC: 10.0ms)
+Completed 200 OK in 75ms (Views: 41.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 10.0ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 76439078fcae4ac094f0ca33aa75011a to Sentry
+Started GET "/" for ::1 at 2025-02-19 17:38:52 +0300
+[Tracing] Starting <http.server> transaction </>
+[Profiler] Started
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.slim
+  Rendering posts/index.html.slim within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='RailsProject64',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.slim:4
+  Rendered posts/index.html.slim within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layouts/shared/_navbar.html.slim (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/shared/_alert.html.slim (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.slim (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 8.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+[Profiler] Stopped
+[Transport] Sending envelope with items [transaction, profile] 88d72e815b014b5dabc89428e8503ba5 to Sentry
+[Sentry::SessionFlusher] thread killed
+Shutting down background worker
+[Transport] Sending envelope with items [sessions]  to Sentry
