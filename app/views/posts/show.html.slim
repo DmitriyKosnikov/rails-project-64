@@ -13,7 +13,7 @@ p.small
        data: { 'turbo-method': :delete, 'turbo-confirm': t('actions.confirm') },
        class: 'btn btn-outline-danger'
   .likes-section
-    span = @post.likes.count
+    span = @post.likes_count
     = render 'likes/like', post: @post
 
 - if @post.comments.any?

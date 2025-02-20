@@ -11,15 +11,15 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     @like = post_likes(:one)
   end
 
-  test 'should create comment' do
+  test 'should create like' do
     post post_likes_path(@post)
 
-    assert_equal 1, @post.post_likes.count
+    assert_equal 1, @post.likes.count
 
     assert_redirected_to @post
   end
 
-  test 'should destroy comment' do
+  test 'should destroy like' do
     assert_difference('PostLike.count', -1) do
       delete post_like_url(@post, @like)
     end
