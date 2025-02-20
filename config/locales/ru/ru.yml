@@ -1,0 +1,11 @@
+ru:
+  application:
+    footer: © Хекслет %{year}
+    title: Коллективный блог
+  navbar:
+    new: Новый пост
+    login: Войти
+    signup: Регистрация
+    signout: Выход
+  actions:
+    confirm: Вы уверены?

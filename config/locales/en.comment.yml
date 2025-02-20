@@ -6,6 +6,7 @@ en:
       not_creator: You are not the creator of this comment
       cant_create: Cannot create comment.
   
+    comments: Comments
     respond: Respond
     destroy: Destroy
     replies: Replies

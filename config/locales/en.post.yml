@@ -11,3 +11,5 @@ en:
       created: Post was successfully created.
       updated: Post was successfully updated.
       not_creator: You are not the creator of this post.
+      edit: Edit post
+      new: New Post

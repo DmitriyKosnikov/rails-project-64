@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    models:
+      post: Пост
+      post_comment: Комментарий
+    
+    attributes:
+      post:
+        title: Заголовок
+        body: Содержание
+        category: Категория
+      post_comment:
+        content: Контент
+
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: Не может быть пустым.
+              too_short: Минимальная длина - 2 символа.
+              too_long: Максимальная длина - 255 символов.
+            body:
+              blank: Не может быть пустым.
+              too_short: Минимальная длина - 200 символов.
+              too_long: Максимальная длина - 4000 символов.
+            category:
+              required: Выберете категорию.
+        
+        post_comment:
+          blank: Не может быть пустым.

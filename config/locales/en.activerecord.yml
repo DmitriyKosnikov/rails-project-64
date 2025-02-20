@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    models:
+      post: Post
+      post_comment: Comment
+    
+    attributes:
+      post:
+        title: Title
+        body: Body
+        category: Category
+      post_comment:
+        content: Content
+
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: Can't be blank
+              too_short: Minimum length is 2 characters.
+              too_long: Maximum length is 255 characters.
+            body:
+              blank: Can't be blank
+              too_short: Minimum length is 200
+              too_long: Maximuim length is 4000
+            category:
+              required: Choose the Category
+        
+        post_comment:
+          blank: Can't be blank

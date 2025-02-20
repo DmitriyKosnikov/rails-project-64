@@ -1,12 +1,11 @@
 = simple_form_for(@post) do |f|
   = f.error_notification
-  = f.error_notification
    message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :title
-    = f.input :body
-    = f.association :category
+    = f.input :title, label: t('simple_form.labels.post_title'), required: false
+    = f.input :body, label: t('simple_form.labels.post_body'), required: false
+    = f.association :category, label: t('simple_form.labels.post_category')
 
   .form-actions
-    = f.button :submit, class: 'btn btn-outline-primary'
+    = f.submit @post.new_record? ? t('simple_form.labels.submit_new') : t('simple_form.labels.submit_edit'), class: 'btn btn-success'
