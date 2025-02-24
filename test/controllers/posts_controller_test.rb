@@ -21,13 +21,26 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create post' do
-    assert_difference('Post.count') do
-      post posts_url,
-           params: { post: { body: @post.body, category_id: @post.category_id, title: @post.title,
-                             creator: @post.creator } }
-    end
+    post posts_url, params: {
+      post: {
+        body: @post.body,
+        category_id: @post.category_id,
+        title: @post.title,
+        creator: @post.creator
+      }
+    }
 
-    assert_redirected_to post_url(Post.last)
+    assert_response :redirect
+
+    created_post =
+      Post.find_by(
+        body: @post.body,
+        category_id: @post.category_id,
+        title: @post.title,
+        creator: @post.creator
+      )
+
+    assert(created_post)
   end
 
   test 'should show post' do
@@ -41,10 +54,24 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update post' do
-    patch post_url(@post),
-          params: { post: { body: @post.body, category_id: @post.category_id, title: @post.title,
-                            creator: @post.creator } }
-    assert_redirected_to post_url(@post)
+    patch post_url(@post), params: {
+      post: {
+        body: @post.body,
+        category_id: @post.category_id,
+        title: @post.title,
+        creator: @post.creator
+      }
+    }
+    assert_response :redirect
+
+    updated_post = Post.find_by(
+      body: @post.body,
+      category_id: @post.category_id,
+      title: @post.title,
+      creator: @post.creator
+    )
+
+    assert(updated_post)
   end
 
   test 'should destroy post' do

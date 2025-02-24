@@ -12,10 +12,20 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create post_comment' do
-    assert_difference('PostComment.count') do
-      post post_comments_url(@post),
-           params: { post_comment: { content: @comment.content, parent_id: @comment.parent_id } }
+    assert_difference 'PostComment.count', 1 do
+      post post_comments_url(@post), params: {
+        post_comment: {
+          content: @comment.content,
+          parent_id: @comment.parent_id
+        }
+      }
     end
+
+    assert_redirected_to post_path(@post)
+
+    created_comment = PostComment.find(@comment.id)
+
+    assert(created_comment.post, @post.id)
   end
 
   test 'should destroy post_comment' do

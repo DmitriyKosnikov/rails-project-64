@@ -4,5 +4,10 @@ h1 = t('application.title')
   - @posts.each do |post|
     .card.mb-3.rounded.shadow
       .card-body
-        h3 = link_to post.title, post, class: 'text-decoration-none text-dark'
-        p = post.body
+        h2.h5.card_title = link_to post.title, post, class: 'text-decoration-none text-dark'
+        .card-text.mb-2
+          = post.body.truncate(300)
+        .text-right.small.text-muted.mt-auto
+          span.me-2 = "#{t('post.liked_by')} #{post.likes_count}"
+          span.me-2 = distance_of_time_in_words(post.created_at, Time.now)
+          span = post.creator.email

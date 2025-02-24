@@ -5,18 +5,9 @@ class LikesController < ApplicationController
   before_action :set_post
 
   def create
-    @like = @post.likes.find_by(user: current_user)
+    @like = @post.likes.find_or_create_by(user: current_user)
 
-    if @like.nil?
-      @like = @post.likes.build(user: current_user)
-      if @like.save
-        redirect_to post_path(@post)
-      else
-        redirect_to post_path(@post), notice: t('like.error')
-      end
-    else
-      redirect_to post_path(@post), notice: t('like.already_liked')
-    end
+    redirect_to @post
   end
 
   def destroy

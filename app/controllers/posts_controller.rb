@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).includes(:creator)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -31,28 +31,20 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.creator = current_user if @post.new_record?
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: t('post.actions.created') }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to @post, notice: t('post.actions.created')
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     if @post.creator == current_user
-      respond_to do |format|
-        if @post.update(post_params)
-          format.html { redirect_to @post, notice: t('post.actions.updated') }
-          format.json { render :show, status: :ok, location: @post }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
+      if @post.update(post_params)
+        redirect_to @post, notice: t('post.actions.updated')
+      else
+        render :edit, status: :unprocessable_entity
       end
     else
       redirect_to @post, notice: t('post.actions.not_creator')
@@ -64,10 +56,7 @@ class PostsController < ApplicationController
     if @post.creator == current_user
       @post.destroy!
 
-      respond_to do |format|
-        format.html { redirect_to root_path, status: :see_other, notice: t('post.actions.deleted') }
-        format.json { head :no_content }
-      end
+      redirect_to root_path, status: :see_other, notice: t('post.actions.deleted')
     else
       redirect_to @post, notice: t('post.actions.not_creator')
     end

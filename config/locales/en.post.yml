@@ -5,6 +5,7 @@ en:
     show: Show this post
     delete: Delete this post
     edit: Edti this post
+    liked_by: 'Likes:'
 
     actions:
       deleted: Post was succesfully deleted.

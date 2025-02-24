@@ -9,6 +9,4 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { in: 5..255 }
   validates :body, presence: true, length: { in: 200..4000 }
-  # validates :title, length: { in: 5..255 }
-  # validates :body, length: { in: 200..4000 }
 end
